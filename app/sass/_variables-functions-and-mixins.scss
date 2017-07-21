@@ -1,0 +1,41 @@
+$main-color: #393d45;
+$red-color: #d4495a;
+$green-color: #42e8ab;
+
+$main-color-light: #ccd1dd;
+
+$text-color: $main-color;
+
+$white-color: #fff;
+$black-color: #000;
+
+@mixin button($color) {
+    padding: 15px 30px;
+    background: $color;
+    color: $white-color;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    transition: .2s;
+    &:hover,
+    &:active,
+    &:focus {
+        background: darken($color, 10%);
+        text-decoration: none;
+        color: $white-color;
+    }
+}
+
+$i: 10;
+@while $i < 101 {
+    .mb-#{$i} { margin-bottom: $i + px; }
+    $i: $i + 10;
+}
+
+$i: 10;
+@while $i < 101 {
+    .mt-#{$i} { margin-top: $i + px; }
+    $i: $i + 10;
+}
