@@ -1213,6 +1213,34 @@
   margin-top: 30px;
 }
 
+.sp-objective__business {
+  text-align: center;
+  padding: 10px 0 0;
+  font-weight: 100;
+  color: rgba(57, 61, 69, 0.6);
+}
+
+.sp-objective__online-link {
+  display: block;
+  color: #393d45;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 50px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.sp-objective__online-link span {
+  width: 50px;
+  text-align: center;
+  display: inline-block;
+}
+
+.sp-objective__online-link:hover {
+  color: #d4495a;
+  text-decoration: none;
+}
+
 .sp-card, .sp-card-2 {
   background: rgba(204, 209, 221, 0.3);
   padding: 40px;

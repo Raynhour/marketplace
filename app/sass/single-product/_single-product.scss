@@ -109,6 +109,29 @@
         color: $main-color;
         margin-top: 30px;
     }
+    &__business {
+        text-align: center;
+        padding: 10px 0 0;
+        font-weight: 100;
+        color: rgba($main-color, .6);
+    }
+    &__online-link {
+        display: block;
+        color: $main-color;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 50px;
+        transition: .2s;
+        span {
+            width: 50px;
+            text-align: center;
+            display: inline-block;
+        }
+        &:hover {
+            color: $red-color;
+            text-decoration: none;
+        }
+    }
 }
 
 .sp-card {
