@@ -1,4 +1,5 @@
 @import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
 .mb-10 {
   margin-bottom: 10px;
 }
@@ -1036,10 +1037,55 @@
 .single-product-s1 {
   background: #fff;
   padding: 60px 0;
+  /****** Style Star Rating Widget *****/
+  /***** CSS Magic to Highlight Stars on Hover *****/
 }
 
 .single-product-s1 .container-fluid {
   max-width: 1410px;
+}
+
+.single-product-s1 label {
+  margin-bottom: 0;
+}
+
+.single-product-s1 .rating {
+  border: none;
+}
+
+.single-product-s1 .rating > input {
+  display: none;
+}
+
+.single-product-s1 .rating > label:before {
+  margin-left: 5px;
+  font-size: 16px;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\f005";
+}
+
+.single-product-s1 .rating > .half:before {
+  content: "\f089";
+  position: absolute;
+}
+
+.single-product-s1 .rating > label {
+  color: #ddd;
+  float: right;
+}
+
+.single-product-s1 .rating > input:checked ~ label,
+.single-product-s1 .rating:not(:checked) > label:hover,
+.single-product-s1 .rating:not(:checked) > label:hover ~ label {
+  color: #FFD700;
+}
+
+.single-product-s1 .rating > input:checked + label:hover,
+.single-product-s1 .rating > input:checked ~ label:hover,
+.single-product-s1 .rating > label:hover ~ input:checked ~ label,
+.single-product-s1 .rating > input:checked ~ label:hover ~ label {
+  color: #FFED85;
 }
 
 .sp__title {
@@ -1167,15 +1213,14 @@
   margin-top: 30px;
 }
 
-.sp-card {
-  background: #ccd1dd;
-  padding: 40px 40px 10px;
+.sp-card, .sp-card-2 {
+  background: rgba(204, 209, 221, 0.3);
+  padding: 40px;
   margin-top: 60px;
   position: relative;
-  margin-right: -100px;
 }
 
-.sp-card:after {
+.sp-card:after, .sp-card-2:after {
   content: '';
   display: block;
   position: absolute;
@@ -1215,8 +1260,9 @@
 
 .sp-card__right {
   margin: 0;
-  color: rgba(57, 61, 69, 0.6);
-  font-weight: 100;
+  color: #393d45;
+  font-weight: 700;
+  font-size: 16px;
 }
 
 .sp-card__last-row {
@@ -1260,6 +1306,20 @@
 .sp-card__category {
   color: rgba(57, 61, 69, 0.6);
   font-weight: 100;
+}
+
+.sp-card-2 {
+  background: none;
+  padding: 0;
+}
+
+.sp-card-2:after {
+  display: none;
+}
+
+.sp-card-2 .sp-card__right {
+  font-weight: 100;
+  color: rgba(57, 61, 69, 0.6);
 }
 
 .single-product-s2 {
