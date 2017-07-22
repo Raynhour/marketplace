@@ -22,5 +22,9 @@ $('document').ready(function(){
         nav: false,
         dots: true
     });
-	
+
+    $('#gallery').photobox('a',{ time:0 });
+
 });
+
+plyr.setup();

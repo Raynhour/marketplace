@@ -249,6 +249,33 @@
 .single-product-s3 {
     padding: 90px 0;
     background: $white-color;
+    .plyr__play-large {
+        padding: 30px;
+        background: $green-color;
+        box-shadow: 0 0 10px rgba($black-color, .3);
+        &:hover {
+            background: darken($green-color, 10%);
+        }
+    }
+    .plyr__progress--played,
+    .plyr__volume--display {
+        color: $green-color;
+    }
+    &__gallery-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #gallery {
+        position: relative;
+    }
+    &__gallery {
+        margin-bottom: 30px;
+        margin-left: 30px;
+        background-size: cover;
+        background-position: center center;
+        width: 200px;
+        height: 170px;
+    }
 }
 
 .single-product-s4 {
