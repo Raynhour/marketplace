@@ -224,7 +224,9 @@
 }
 
 .s1 {
-  background: rgba(57, 61, 69, 0.9);
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center center;
   padding: 40px 0 20px;
 }
 
@@ -1479,7 +1481,9 @@
 }
 
 .catalog-s1 {
-  background: #505661;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center center;
 }
 
 .catalog-s1 .container {
@@ -1575,7 +1579,7 @@
 
 .catalog-s2 {
   background: #fff;
-  padding: 40px 0;
+  padding: 40px 0 30px;
 }
 
 .catalog-s2__title {
@@ -1625,14 +1629,103 @@
   margin: 15px;
 }
 
+.catalog-s2__load-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 15px;
+}
+
+.catalog-s2__load {
+  padding: 15px 30px;
+  background: #33b185;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+  min-width: 170px;
+}
+
+.catalog-s2__load:hover, .catalog-s2__load:active, .catalog-s2__load:focus {
+  background: #288967;
+  text-decoration: none;
+  color: #fff;
+}
+
+.filters {
+  padding-right: 15px;
+}
+
 .filters__title {
   font-size: 24px;
   font-weight: 700;
   color: #393d45;
   letter-spacing: 2px;
   text-transform: uppercase;
-  border-bottom: 3px solid rgba(204, 209, 221, 0.8);
-  padding-bottom: 15px;
+}
+
+.filters__items-wrapper {
+  padding-left: 0;
+  list-style: none;
+}
+
+.filters__group__title {
+  font-weight: 700;
+  font-size: 20px;
+  margin: 20px 0;
+  padding-top: 20px;
+  border-top: 3px solid rgba(204, 209, 221, 0.8);
+}
+
+.filters__item {
+  display: block;
+}
+
+.filters__link {
+  display: block;
+  padding: 7px 0;
+  color: #33b185;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.filters__link:hover {
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+  color: #33b185;
+  text-decoration: none;
+}
+
+.filters__image-wrapper {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
+
+.filters__image {
+  margin-right: 5px;
 }
 
 @font-face {

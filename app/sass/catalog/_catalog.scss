@@ -1,5 +1,7 @@
 .catalog-s1 {
-    background: lighten($main-color, 10%);
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-position: center center;
     .container {
         position: relative;
     }
@@ -54,7 +56,7 @@
 
 .catalog-s2 {
     background: $white-color;
-    padding: 40px 0;
+    padding: 40px 0 30px;
     &__title {
         text-align: center;
         text-transform: uppercase;
@@ -81,16 +83,61 @@
             margin: 15px;
         }
     }
+    &__load-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
+    }
+    &__load {
+        @include button($green-color);
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        min-width: 170px;
+    }
 }
 
 .filters {
+    padding-right: 15px;
     &__title {
         font-size: 24px;
         font-weight: 700;
         color: $main-color;
         letter-spacing: 2px;
         text-transform: uppercase;
-        border-bottom: 3px solid rgba($main-color-light, .8);
-        padding-bottom: 15px;
+    }
+    &__items-wrapper {
+        padding-left: 0;
+        list-style: none;
+    }
+    &__group__title {
+        font-weight: 700;
+        font-size: 20px;
+        margin: 20px 0;
+        padding-top: 20px;
+        border-top: 3px solid rgba($main-color-light, .8);
+    }
+    &__item {
+        display: block;
+    }
+    &__link {
+        display: block;
+        padding: 7px 0;
+        color: $green-color;
+        filter: grayscale(1);
+        transition: .2s;
+        &:hover {
+            filter: grayscale(0);
+            color: $green-color;
+            text-decoration: none;
+        }
+    }
+    &__image-wrapper {
+        display: inline-block;
+        width: 30px;
+        text-align: center;
+    }
+    &__image {
+        margin-right: 5px;
     }
 }

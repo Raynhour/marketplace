@@ -94,7 +94,9 @@
 // =============================== S1 ===========================
 
 .s1 {
-    background: rgba($main-color, .9);
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    background-position: center center;
     padding: 40px 0 20px;
     &__title {
         color: $white-color;
