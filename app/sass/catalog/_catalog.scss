@@ -1,0 +1,96 @@
+.catalog-s1 {
+    background: lighten($main-color, 10%);
+    .container {
+        position: relative;
+    }
+    &__wrapper {
+        height: 380px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    &__image-wrapper {
+        position: absolute;
+        top: 40px;
+        right: 0;
+        width: 557px;
+        height: 375px;
+        background-size: cover;
+        background-position: top center;
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -25px;
+            height: 25px;
+            background: url('../img/browser.png');
+        }
+    }
+    &__title {
+        color: $white-color;
+        font-weight: 700;
+        font-size: 50px;
+        margin: 0;
+    }
+    &__text {
+        color: rgba($white-color, .8);
+        font-size: 18px;
+        font-weight: 100;
+        line-height: 26px;
+        margin: 30px 0;
+    }
+    &__link {
+        @include button($green-color);
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+.catalog-s2 {
+    background: $white-color;
+    padding: 40px 0;
+    &__title {
+        text-align: center;
+        text-transform: uppercase;
+        color: $main-color;
+        font-weight: 700;
+        font-size: 40px;
+    }
+    &__column-wrapper {
+        display: flex;
+        margin-top: 40px;
+        flex-direction: row;
+    }
+    &__left {
+        width: 340px;
+    }
+    &__right {
+        width: calc(100% - 340px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        .product-cart {
+            width: 100%;
+            max-width: 350px;
+            margin: 15px;
+        }
+    }
+}
+
+.filters {
+    &__title {
+        font-size: 24px;
+        font-weight: 700;
+        color: $main-color;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-bottom: 3px solid rgba($main-color-light, .8);
+        padding-bottom: 15px;
+    }
+}

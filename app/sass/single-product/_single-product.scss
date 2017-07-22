@@ -230,4 +230,33 @@
     &__button-3 {
         @include button($red-color);
     }
+
+    &__comment-wrapper {
+        margin-top: 60px;
+    }
+    &__comment {
+        display: flex;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    &__comment__image {
+        width: 110px;
+        height: 110px;
+        background-size: cover;
+        background-position: center center;
+        border-radius: 50%;
+    }
+    &__comment__text-body {
+        color: rgba($main-color, .8);
+        font-size: 14px;
+    }
+    &__comment__text-footer {
+        margin-top: 20px;
+        color: rgba($main-color, .6);
+        font-size: 14px;
+        border-bottom: 1px solid rgba($main-color, .1);
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 10px;
+    }
 }
