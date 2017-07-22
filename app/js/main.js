@@ -12,5 +12,15 @@ $('document').ready(function(){
             "<div class='s8__right'><img src='../img/arrow-next.png'></div>"
         ]
     });
+
+    $('#single-product-s2').owlCarousel({
+        items: 5,
+        loop: true,
+        lazyLoad: true,
+        autoplay: true,
+        autoplayHoverPause: true,
+        nav: false,
+        dots: true
+    });
 	
 });

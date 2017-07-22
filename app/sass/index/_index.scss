@@ -232,6 +232,7 @@
 
 .product-cart {
     margin-bottom: 30px;
+    position: relative;
     &__header {}
     &__image {
         height: 350px;
@@ -321,6 +322,7 @@
         top: -2px;
         filter: grayscale(1) brightness(4);
         transition: .2s;
+        z-index: 12;
         img { margin-right: 5px; }
         &:hover {
             filter: grayscale(0);
@@ -333,6 +335,17 @@
         margin-right: 5px;
     }
     &__favorite.active { filter: grayscale(0); }
+    &__link {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
 
 // =============================== S4 ===========================
@@ -472,7 +485,7 @@
 
 .s8 {
     background: rgba($main-color, .02);
-    padding: 30px;
+    padding: 40px 0;
     &__items-wrapper {
         position: relative;
     }
