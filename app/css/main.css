@@ -1855,6 +1855,237 @@
   margin-right: 5px;
 }
 
+.login {
+  padding: 40px 0;
+  background: #fff;
+}
+
+.login__title {
+  color: #393d45;
+  font-weight: 700;
+  text-align: center;
+  font-size: 36px;
+  margin: 0 0 40px 0;
+}
+
+.form__title {
+  color: #393d45;
+  font-weight: 700;
+  text-align: center;
+  font-size: 24px;
+  margin: 0 0 15px 0;
+  letter-spacing: 2px;
+}
+
+.form__desc {
+  font-size: 14px;
+  color: rgba(57, 61, 69, 0.7);
+  text-align: center;
+}
+
+.form__desc span {
+  color: #d4495a;
+}
+
+.form__group {
+  margin-bottom: 20px;
+}
+
+.form__label {
+  display: block;
+  font-weight: 100;
+  color: rgba(57, 61, 69, 0.7);
+  margin-bottom: 3px;
+}
+
+.form__label span {
+  color: #d4495a;
+}
+
+.form__input, .form .jq-selectbox__select-text {
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: rgba(204, 209, 221, 0.6);
+  padding: 15px 20px;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.form__input:focus, .form .jq-selectbox__select-text:focus {
+  border-color: #393d45;
+}
+
+.form__button {
+  padding: 15px 30px;
+  background: #33b185;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: .2s;
+  min-width: 250px;
+}
+
+.form__button:hover, .form__button:active, .form__button:focus {
+  background: #288967;
+  text-decoration: none;
+  color: #fff;
+}
+
+.form__forget-link {
+  color: #33b185;
+  display: inline-block;
+  position: relative;
+  top: -15px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.form__forget-link:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 2px;
+  height: 1px;
+  left: 0;
+  width: 100%;
+  background: #33b185;
+}
+
+.form__forget-link:hover {
+  text-decoration: none;
+  color: #d4495a;
+}
+
+.form__soc__title {
+  color: #393d45;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.form__social-wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.form__social-link {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+  border: 1px solid #ccd1dd;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.form__social-link:hover {
+  background: #ccd1dd;
+}
+
+.form__social-link__facebook:hover {
+  background: #3b5998;
+  border-color: #3b5998;
+}
+
+.form__social-link__facebook:hover img {
+  -webkit-filter: brightness(5);
+          filter: brightness(5);
+}
+
+.form__social-link__google:hover {
+  background: #ea4335;
+  border-color: #ea4335;
+}
+
+.form__social-link__google:hover img {
+  -webkit-filter: brightness(5);
+          filter: brightness(5);
+}
+
+.form__social-link__linkedin:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+}
+
+.form__social-link__linkedin:hover img {
+  -webkit-filter: brightness(5);
+          filter: brightness(5);
+}
+
+.form .jq-selectbox__select,
+.form .jq-selectbox {
+  width: 100%;
+  position: relative;
+}
+
+.form .jq-selectbox__select-text {
+  position: relative;
+  margin-bottom: -6px;
+}
+
+.form .jq-selectbox__select-text:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  background: url("../img/select.png");
+  width: 6px;
+  height: 5px;
+}
+
+.form .jq-selectbox__dropdown {
+  width: 100%;
+  z-index: 12;
+}
+
+.form .jq-selectbox__dropdown ul {
+  padding: 0;
+}
+
+.form .jq-selectbox__dropdown ul li {
+  background: #ccd1dd;
+  padding: 15px 20px;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.form .jq-selectbox__dropdown ul li:nth-child(2n+1) {
+  background: #c3c9d7;
+}
+
+.form .jq-selectbox__dropdown ul li:hover {
+  background: #adb5c9;
+  cursor: pointer;
+}
+
 @font-face {
   font-family: 'ProximaNova';
   src: url("../fonts/proxima_nova/Proxima Nova Thin.otf");

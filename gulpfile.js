@@ -35,6 +35,7 @@ gulp.task('scripts', function() {
         'app/libs/owl.carousel/dist/owl.carousel.js',
         'app/libs/plyr/dist/plyr.js',
         'app/libs/photobox/photobox/jquery.photobox.js',
+        'app/libs/jquery.form-styler/dist/jquery.formstyler.js',
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())

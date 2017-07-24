@@ -25,6 +25,8 @@ $('document').ready(function(){
 
     $('#gallery').photobox('a',{ time:0 });
 
+    $('.form__select').styler();
+
 });
 
 plyr.setup();

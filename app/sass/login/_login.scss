@@ -1,0 +1,155 @@
+.login {
+    padding: 40px 0;
+    background: $white-color;
+    &__title {
+        color: $main-color;
+        font-weight: 700;
+        text-align: center;
+        font-size: 36px;
+        margin: 0 0 40px 0;
+    }
+}
+
+.form {
+    &__title {
+        color: $main-color;
+        font-weight: 700;
+        text-align: center;
+        font-size: 24px;
+        margin: 0 0 15px 0;
+        letter-spacing: 2px;
+    }
+    &__desc {
+        font-size: 14px;
+        color: rgba($main-color, .7);
+        text-align: center;
+        span {
+            color: $red-color;
+        }
+    }
+    &__group {
+        margin-bottom: 20px;
+    }
+    &__label {
+        display: block;
+        font-weight: 100;
+        color: rgba($main-color, .7);
+        margin-bottom: 3px;
+        span {
+            color: $red-color;
+        }
+    }
+    &__input {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 3px solid transparent;
+        background: rgba($main-color-light, .6);
+        padding: 15px 20px;
+        outline: none;
+        transition: .2s;
+        &:focus {
+            border-color: $main-color;
+        }
+    }
+    &__button {
+        @include button($green-color);
+        min-width: 250px;
+    }
+    &__forget-link {
+        color: $green-color;
+        display: inline-block;
+        position: relative;
+        top: -15px;
+        transition: .2s;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 2px;
+            height: 1px;
+            left: 0;
+            width: 100%;
+            background: $green-color;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $red-color;
+        }
+    }
+    &__soc__title {
+        color: $main-color;
+        letter-spacing: 1px;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__social-wrapper {
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__social-link {
+        display: flex;
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid $main-color-light;
+        justify-content: center;
+        align-items: center;
+        transition: .2s;
+        &:hover { background: $main-color-light; }
+        &__facebook:hover {
+            background: #3b5998;
+            border-color: #3b5998;
+            img { filter: brightness(5); }
+        }
+        &__google:hover {
+            background: #ea4335;
+            border-color: #ea4335;
+            img { filter: brightness(5); }
+        }
+        &__linkedin:hover {
+            background: #0077b5;
+            border-color: #0077b5;
+            img { filter: brightness(5); }
+        }
+    }
+    .jq-selectbox__select,
+    .jq-selectbox{
+        width: 100%;
+        position: relative;
+    }
+    .jq-selectbox__select-text {
+        @extend .form__input;
+        position: relative;
+        margin-bottom: -6px;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            background: url('../img/select.png');
+            width: 6px;
+            height: 5px;
+        }
+    }
+    .jq-selectbox__dropdown {
+        width: 100%;
+        z-index: 12;
+        ul {
+            padding: 0;
+            li {
+                background: $main-color-light;
+                padding: 15px 20px;
+                transition: .2s;
+                &:nth-child(2n+1) {background: darken($main-color-light, 3%);}
+                &:hover {
+                    background: darken($main-color-light, 10%);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
