@@ -36,6 +36,7 @@ gulp.task('scripts', function() {
         'app/libs/plyr/dist/plyr.js',
         'app/libs/photobox/photobox/jquery.photobox.js',
         'app/libs/jquery.form-styler/dist/jquery.formstyler.js',
+        'app/libs/bootstrap-select/dist/js/bootstrap-select.js',
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
@@ -53,6 +54,11 @@ gulp.task('watch', ['browser-sync', 'css-libs', 'scripts'], function() {
     gulp.watch('app/sass/**/*.scss', ['sass']);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/js/**/*.js', browserSync.reload);
+});
+
+gulp.task('glyphicon-bootstrap', function() {
+    return gulp.src('app/libs/bootstrap/dist/fonts/**/*')
+        .pipe(gulp.dest('app/fonts'));
 });
 
 // ----------------------Дефолтный таск gulp --------------------------------

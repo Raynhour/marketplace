@@ -26,6 +26,11 @@ $('document').ready(function(){
     $('#gallery').photobox('a',{ time:0 });
 
     $('.form__select').styler();
+    $('#photo, #video, #main_image').styler({
+        fileBrowse: 'Выбрать файл'
+    });
+
+    $('#new_niche').selectpicker();
 
 });
 

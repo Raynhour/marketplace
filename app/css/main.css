@@ -1902,7 +1902,7 @@
   color: #d4495a;
 }
 
-.form__input, .form .jq-selectbox__select-text {
+.form__input, .form .jq-selectbox__select-text, .form .bootstrap-select .dropdown-toggle, .form__textarea {
   display: block;
   width: 100%;
   border: none;
@@ -1914,8 +1914,12 @@
   transition: .2s;
 }
 
-.form__input:focus, .form .jq-selectbox__select-text:focus {
+.form__input:focus, .form .jq-selectbox__select-text:focus, .form .bootstrap-select .dropdown-toggle:focus, .form__textarea:focus {
   border-color: #393d45;
+}
+
+.form__textarea {
+  height: 200px;
 }
 
 .form__button {
@@ -2071,19 +2075,112 @@
 }
 
 .form .jq-selectbox__dropdown ul li {
-  background: #ccd1dd;
+  background: #393d45;
   padding: 15px 20px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form .jq-selectbox__dropdown ul li:hover {
+  background: #288967;
+  cursor: pointer;
+}
+
+.form .jq-selectbox__dropdown ul .disabled:hover {
+  background: #393d45;
+  cursor: default;
+}
+
+.form .jq-file {
+  position: relative;
+}
+
+.form .jq-file__browse {
+  position: absolute;
+  background: #393d45;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 15px;
+  color: rgba(255, 255, 255, 0.8);
   -webkit-transition: .2s;
   transition: .2s;
 }
 
-.form .jq-selectbox__dropdown ul li:nth-child(2n+1) {
-  background: #c3c9d7;
+.form .bootstrap-select {
+  width: 100% !important;
+  display: block;
+  outline: none;
 }
 
-.form .jq-selectbox__dropdown ul li:hover {
-  background: #adb5c9;
+.form .bootstrap-select .dropdown-toggle {
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  outline: none;
+}
+
+.form .bootstrap-select .dropdown-toggle:active, .form .bootstrap-select .dropdown-toggle:focus {
+  outline: none !important;
+}
+
+.form .bootstrap-select .dropdown-menu {
+  padding: 0;
+  -webkit-border-radius: 0;
+          border-radius: 0;
+  margin-top: -3px;
+}
+
+.form .bootstrap-select .glyphicon {
+  margin-top: 16px !important;
+}
+
+.form .bootstrap-select ul {
+  padding: 0;
+}
+
+.form .bootstrap-select ul a {
+  background: #393d45;
+  padding: 15px 20px;
+  -webkit-transition: .2s;
+  transition: .2s;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form .bootstrap-select ul a:hover {
+  background: #288967;
   cursor: pointer;
+}
+
+.form .bootstrap-select ul .disabled:hover {
+  background: #393d45;
+  cursor: default;
+}
+
+.add-product .form__title {
+  text-transform: uppercase;
+  border-bottom: 3px solid rgba(204, 209, 221, 0.5);
+  padding-bottom: 20px;
+  margin: 20px 0;
+}
+
+.add-product .form__label {
+  font-weight: 700;
+  color: #393d45;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.add-product .form__forget-link {
+  color: rgba(57, 61, 69, 0.8);
+}
+
+.add-product .form__forget-link:after {
+  display: none;
+}
+
+.add-product .form__forget-link:hover {
+  color: #d4495a;
 }
 
 @font-face {

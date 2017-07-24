@@ -39,7 +39,7 @@
             color: $red-color;
         }
     }
-    &__input {
+    &__input, &__textarea {
         display: block;
         width: 100%;
         border: none;
@@ -51,6 +51,9 @@
         &:focus {
             border-color: $main-color;
         }
+    }
+    &__textarea {
+        height: 200px;
     }
     &__button {
         @include button($green-color);
@@ -116,7 +119,7 @@
         }
     }
     .jq-selectbox__select,
-    .jq-selectbox{
+    .jq-selectbox {
         width: 100%;
         position: relative;
     }
@@ -141,15 +144,86 @@
         ul {
             padding: 0;
             li {
-                background: $main-color-light;
+                background: $main-color;
                 padding: 15px 20px;
                 transition: .2s;
-                &:nth-child(2n+1) {background: darken($main-color-light, 3%);}
+                color: rgba($white-color, .8);
                 &:hover {
-                    background: darken($main-color-light, 10%);
+                    background: darken($green-color, 10%);
                     cursor: pointer;
                 }
             }
+            .disabled:hover {background: $main-color; cursor: default;}
         }
+    }
+
+    .jq-file {
+        position: relative;
+    }
+    .jq-file__browse {
+        position: absolute;
+        background: $main-color;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 15px;
+        color: rgba($white-color, .8);
+        transition: .2s;
+    }
+
+
+    .bootstrap-select {
+        width: 100% !important;
+        display: block;
+        outline: none;
+        .dropdown-toggle {
+            @extend .form__input;
+            border-radius: 0;
+            outline: none;
+            &:active, &:focus {outline: none !important;}
+        }
+        .dropdown-menu {
+            padding: 0;
+            border-radius: 0;
+            margin-top: -3px;
+        }
+        .glyphicon {
+            margin-top: 16px !important;
+        }
+        ul {
+            padding: 0;
+            a {
+                background: $main-color;
+                padding: 15px 20px;
+                transition: .2s;
+                color: rgba($white-color, .8);
+                &:hover {
+                    background: darken($green-color, 10%);
+                    cursor: pointer;
+                }
+            }
+            .disabled:hover {background: $main-color; cursor: default;}
+        }
+    }
+}
+
+
+.add-product {
+    .form__title {
+        text-transform: uppercase;
+        border-bottom: 3px solid rgba($main-color-light, .5);
+        padding-bottom: 20px;
+        margin: 20px 0;
+    }
+    .form__label {
+        font-weight: 700;
+        color: $main-color;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .form__forget-link {
+        color: rgba($main-color, .8);
+        &:after { display: none; }
+        &:hover { color: $red-color; }
     }
 }
