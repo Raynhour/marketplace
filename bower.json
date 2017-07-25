@@ -23,6 +23,7 @@
     "owl.carousel": "OwlCarousel2#^2.2.1",
     "plyr": "^2.0.13",
     "jquery.form-styler": "jquery-form-styler#^2.0.0",
-    "bootstrap-select": "^1.12.4"
+    "bootstrap-select": "^1.12.4",
+    "bootstrap-daterangepicker": "^2.1.25"
   }
 }

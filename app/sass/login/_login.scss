@@ -29,6 +29,12 @@
     }
     &__group {
         margin-bottom: 20px;
+        &__new {
+            margin-bottom: 20px;
+            .jq-file {
+                margin-bottom: 20px;
+            }
+        }
     }
     &__label {
         display: block;
@@ -58,6 +64,21 @@
     &__button {
         @include button($green-color);
         min-width: 250px;
+    }
+    .add-benefits__button {
+        color: rgba($main-color, .8);
+        display: block;
+        position: relative;
+        text-align: center;
+        transition: .2s;
+        &:hover, &:active, &:focus {
+            color: $red-color;
+            text-decoration: none;
+        }
+        img {
+            position: relative;
+            margin-top: -3px;
+        }
     }
     &__forget-link {
         color: $green-color;
@@ -153,8 +174,44 @@
                     cursor: pointer;
                 }
             }
-            .disabled:hover {background: $main-color; cursor: default;}
+            .disabled:hover {background: lighten($main-color, 5%); cursor: default;}
+            .disabled { background: lighten($main-color, 5%); }
         }
+    }
+
+    .jq-number {
+        width: 100%;
+        position: relative;
+        &__field {
+            display: block;
+            input {
+                @extend .form__input;
+            }
+        }
+        &__spin {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+            width: 40px;
+            background: $main-color;
+            right: 0;
+            transition: .2s;
+            &:hover {
+                background: $green-color;
+                cursor: pointer;
+            }
+            &:after, &:before {
+                display: block;
+                position: absolute;
+                color: rgba($white-color, .8);
+                font-weight: 700;
+                font-size: 17px;
+            }
+        }
+        .plus { top: 0; &:before { content: '+' }}
+        .minus { bottom: 0; &:after { content: '-' }}
     }
 
     .jq-file {
@@ -170,7 +227,6 @@
         color: rgba($white-color, .8);
         transition: .2s;
     }
-
 
     .bootstrap-select {
         width: 100% !important;
@@ -202,11 +258,11 @@
                     cursor: pointer;
                 }
             }
-            .disabled:hover {background: $main-color; cursor: default;}
+            .disabled a:hover {background: lighten($main-color, 5%); color: rgba($white-color, .8)}
+            .disabled a { background: lighten($main-color, 5%); }
         }
     }
 }
-
 
 .add-product {
     .form__title {
@@ -225,5 +281,52 @@
         color: rgba($main-color, .8);
         &:after { display: none; }
         &:hover { color: $red-color; }
+    }
+}
+
+.daterangepicker {
+    background: $main-color;
+    border-radius: 0;
+    margin-top: -2px;
+    &:after, &:before {
+        display: none;
+    }
+    .calendar-table {
+        border: none;
+        background: $main-color;
+        color: rgba($green-color, .8);
+        td {
+            background: $main-color;
+            color: $white-color;
+        }
+        td.off {
+            background: $main-color;
+            border-radius: 0;
+        }
+        td.start-date, td.end-date, td.in-range {
+            background: $green-color;
+            border-radius: 0;
+        }
+    }
+    .input-mini, .input-mini.active {
+        @extend .form__input;
+        background: rgba($main-color-light, .15);
+        border-radius: 0;
+        height: 48px;
+        color: rgba($white-color, .8);
+        &:focus {
+            box-shadow: none;
+            border-color: $green-color;
+        }
+    }
+    .fa-calendar { display: none; }
+    .applyBtn {
+        @include button($green-color);
+        display: block;
+        border-radius: 0;
+        width: 100%;
+    }
+    .cancelBtn {
+        display: none;
     }
 }

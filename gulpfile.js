@@ -37,6 +37,8 @@ gulp.task('scripts', function() {
         'app/libs/photobox/photobox/jquery.photobox.js',
         'app/libs/jquery.form-styler/dist/jquery.formstyler.js',
         'app/libs/bootstrap-select/dist/js/bootstrap-select.js',
+        'app/libs/moment/min/moment.min.js',
+        'app/libs/bootstrap-daterangepicker/daterangepicker.js',
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())

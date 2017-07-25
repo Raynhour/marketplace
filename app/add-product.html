@@ -68,7 +68,7 @@
                             </div>
                             <div class="form__group">
                                 <label for="period" class="form__label">period</label>
-                                <input id="period" type="date" name="period" class="form__input">
+                                <input id="period" type="text" name="period" class="form__input">
                             </div>
                             <div class="form__group">
                                 <label for="category" class="form__label">выберите категорию</label>
@@ -92,8 +92,8 @@
                                 </select>
                             </div>
                             <div class="form__group">
-                                <label for="country" class="form__label">Ниша бизнеса</label>
-                                <select name="country" id="country" class="form__select">
+                                <label for="niche" class="form__label">Ниша бизнеса</label>
+                                <select name="niche" id="niche" class="form__select">
                                     <option value="" disabled selected>Выберите нишу</option>
                                     <option value="">Sport</option>
                                     <option value="">SMM-Media</option>
@@ -111,25 +111,25 @@
                         <div class="col-md-6">
                             <div class="form__group">
                                 <label for="price" class="form__label">стоимость</label>
-                                <input id="price" type="number" name="price" class="form__input" min="0">
+                                <input id="price" type="number" name="price" class="" min="0">
                             </div>
                             <div class="form__group">
                                 <label for="price_job" class="form__label">стоимость разработки</label>
-                                <input id="price_job" type="number" min="0" name="price_job" class="form__input">
+                                <input id="price_job" type="number" min="0" name="price_job" class="">
                             </div>
                             <div class="form__group">
                                 <label for="payback" class="form__label">Срок окупаемости</label>
-                                <input id="payback" type="number" min="0" name="payback" class="form__input">
+                                <input id="payback" type="number" min="0" name="payback" class="">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form__group">
                                 <label for="redesign" class="form__label">стоимость редизайна</label>
-                                <input id="redesign" type="number" min="0" name="redesign" class="form__input">
+                                <input id="redesign" type="number" min="0" name="redesign" class="">
                             </div>
                             <div class="form__group">
                                 <label for="was_wasted" class="form__label">было потрачено</label>
-                                <input id="was_wasted" type="number" min="0" name="was_wasted" class="form__input">
+                                <input id="was_wasted" type="number" min="0" name="was_wasted" class="">
                             </div>
                         </div>
                     </div>
@@ -150,18 +150,19 @@
                     </div>
                     <h2 class="form__title">benefits</h2>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 new__benefits">
                             <div class="form__group">
-                                <label for="benefit_name-1" class="form__label">заголовок</label>
-                                <input id="benefit_name-1" type="text" name="benefit_name[]" class="form__input">
+                                <label class="form__label">заголовок</label>
+                                <input type="text" name="benefit_name[]" class="form__input">
                             </div>
                             <div class="form__group">
                                 <label for="benefit_text-1" class="form__label">текст</label>
                                 <textarea id="benefit_text-1" name="benefit_text-1[]" class="form__textarea"></textarea>
                             </div>
                         </div>
-                        <div class="col-md-6">
-
+                        <div id="wrapper__new__benefits"></div>
+                        <div style="float: none; clear: both;">
+                            <a id="add-benefits" href="#" class="add-benefits__button"><img src="img/plus-dark.png" alt=""> Добавить Benefits</a>
                         </div>
                     </div>
                     <h2 class="form__title">Futures</h2>
@@ -184,15 +185,16 @@
                                 <input id="video" type="file" name="video" class="form__input">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form__group">
+                        <div class="col-md-6" id="photo-group">
+                            <div id="add-new-photo" class="form__group">
                                 <label for="photo" class="form__label">фото продукта</label>
-                                <input id="photo" type="file" name="photo[]" class="form__input" multiple>
+                                <input id="photo" type="file" name="photo[]" class="form__input">
                             </div>
-                            <a href="#" class="form__forget-link"><img src="img/plus-dark.png"> Добавить фото</a>
+                            <div class="form__group__new"></div>
+                            <a id="add-new-photo-btn" href="#" class="form__forget-link"><img src="img/plus-dark.png"> Добавить фото</a>
                         </div>
                     </div>
-                    <h2 class="form__title"><span class="glyphicon glyphicon-search"></span></h2>
+                    <h2 class="form__title"></h2>
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3">
                             <div class="form__group">
