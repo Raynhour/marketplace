@@ -26,7 +26,8 @@ $('document').ready(function(){
     $('#gallery').photobox('a',{ time:0 });
 
     $('#redesign').styler();
-    $('#category, #country, #niche, #photo, #video, #main_image, #was_wasted, #price, #price_job, #payback').styler({
+    $('#niche_').styler();
+    $('#remember, #account_type, #category, #country, #photo, #video, #main_image, #was_wasted, #price, #price_job, #payback').styler({
         fileBrowse: 'Выбрать файл'
     });
 
@@ -56,6 +57,12 @@ $('document').ready(function(){
     });
 
     $('#period').daterangepicker();
+
+    $('.video__link').hover(function () {
+        $(this).parent('.video').addClass('active');
+    }, function () {
+        $(this).parent('.video').removeClass('active');
+    });
 
 });
 

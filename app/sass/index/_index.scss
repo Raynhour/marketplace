@@ -557,6 +557,7 @@
     padding: 8px;
     background: lighten($main-color, 15%);
     position: relative;
+    transition: .2s;
     &__date {
         display: block;
         position: absolute;
@@ -565,6 +566,7 @@
         background: lighten($main-color, 15%);
         padding: 5px 10px;
         color: rgba($white-color, .8);
+        transition: .2s;
     }
     &__body {
         height: 310px;
@@ -577,6 +579,18 @@
         font-weight: 100;
         padding: 10px 5px;
     }
+    &__link {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+}
+.video.active {
+    background: $green-color;
+    .video__date { background: $green-color; }
 }
 
 // =============================== S10 ===========================

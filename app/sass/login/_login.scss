@@ -44,6 +44,9 @@
         span {
             color: $red-color;
         }
+        &__checkbox {
+            margin-left: 30px;
+        }
     }
     &__input, &__textarea {
         display: block;
@@ -84,7 +87,6 @@
         color: $green-color;
         display: inline-block;
         position: relative;
-        top: -15px;
         transition: .2s;
         &:after {
             content: '';
@@ -176,6 +178,30 @@
             }
             .disabled:hover {background: lighten($main-color, 5%); cursor: default;}
             .disabled { background: lighten($main-color, 5%); }
+        }
+    }
+
+    .jq-checkbox {
+        width: 20px;
+        height: 20px;
+        background: rgba($main-color-light, .6);
+        display: inline-block;
+        position: absolute;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            background: rgba($green-color, 0);
+            transition: .2s;
+        }
+    }
+    .jq-checkbox.checked {
+        &:after {
+            background: rgba($green-color, 1);
         }
     }
 
