@@ -22,3 +22,50 @@
         margin-bottom: 50px;
     }
 }
+
+// --------------------------- Single videoblog page ---------------------------
+
+.single-videoblog {
+    padding: 50px 0;
+    &__title {
+        font-weight: 700;
+        color: $main-color;
+        text-align: center;
+        margin: 0 0 50px 0;
+    }
+    &__video-wrapper {
+        position: relative;
+        border: 7px solid lighten($main-color, 15%);
+    }
+    &__date {
+        position: absolute;
+        top: 30px;
+        padding: 5px 10px;
+        background: lighten($main-color, 15%);
+        color: $white-color;
+    }
+    .plyr__play-large {
+        padding: 40px;
+        transition: .3s;
+    }
+    .plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover, .plyr__play-large {
+        background: $green-color;
+        transition: .3s;
+        &:hover {
+            background: darken($green-color, 10%);
+        }
+    }
+    .plyr__progress--played, .plyr__volume--display {
+        color: $green-color;
+    }
+    .plyr--video .plyr__controls button.tab-focus:focus, .plyr--video .plyr__controls button:hover {
+        background: $green-color;
+    }
+    &__text {
+        margin-top: 50px;
+        color: darken($main-color-light, 30%);
+        font-size: 16px;
+        font-weight: 100;
+        text-align: justify;
+    }
+}

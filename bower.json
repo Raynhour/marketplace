@@ -24,6 +24,9 @@
     "plyr": "^2.0.13",
     "jquery.form-styler": "jquery-form-styler#^2.0.0",
     "bootstrap-select": "^1.12.4",
-    "bootstrap-daterangepicker": "^2.1.25"
+    "bootstrap-daterangepicker": "^2.1.25",
+    "animateCSS": "^1.2.1",
+    "scrollmagic": "^2.0.5",
+    "gsap": "^1.20.2"
   }
 }

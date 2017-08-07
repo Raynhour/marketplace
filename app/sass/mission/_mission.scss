@@ -1,0 +1,217 @@
+.maps {
+    background: rgba($main-color, .02);
+    &__title {
+        font-weight: 400;
+        color: $main-color;
+        text-align: center;
+        margin: 0 0 50px 0;
+        text-transform: uppercase;
+        span {
+            color: $green-color;
+            font-weight: 700;
+        }
+    }
+    .animated {
+        animation-duration: .6s;
+    }
+}
+
+.history {
+    background: radial-gradient(lighten($main-color, 10%), $main-color);
+    padding: 50px 0;
+    &__button {
+        background: $white-color;
+        width: 80px;
+        height: 80px;
+        display: inline-flex;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: 700;
+        color: $main-color;
+        margin: 0 40px;
+        position: relative;
+        transition: .2s;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            border: 2px solid rgba($white-color, .5);
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            left: -8px;
+            top: -8px;
+            transition: .3s;
+        }
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            border: 1px solid rgba($white-color, .3);
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            left: -15px;
+            top: -15px;
+            transition: .4s;
+        }
+        &:hover, &:focus, &:active {
+            text-decoration: none;
+            background: $green-color;
+            color: $white-color;
+            &:after {
+                border-color: rgba($green-color, .5);
+            }
+            &:before {
+                border-color: rgba($green-color, .2);
+            }
+        }
+    }
+    &__button.active {
+        background: $green-color;
+        color: $white-color;
+        transform: scale(1.2);
+        &:after {
+            border-color: rgba($green-color, .5);
+        }
+        &:before {
+            border-color: rgba($green-color, .2);
+        }
+    }
+    &__main-title {
+        color: $white-color;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+        font-weight: 700;
+    }
+    &__text {
+        margin-top: 50px;
+        color: rgba($main-color-light, .8);
+        font-size: 15px;
+        font-weight: 100;
+        display: none;
+    }
+    &__text.active {
+        display: block;
+    }
+}
+
+
+
+.main-map {
+    margin-top: 60px;
+}
+.land {
+    fill: $main-color-light;
+    fill-opacity: 1;
+    stroke: $white-color;
+    stroke-opacity: 1;
+    stroke-width:0.5;
+    transition: .2s;
+}
+.active-land {
+    fill: darken($main-color-light, 25%);
+}
+.active-land:hover {
+    fill: darken($green-color, 10%);
+    stroke: darken($green-color, 10%);
+    cursor: pointer;
+}
+.maps {
+    padding: 40px 0;
+}
+.maps-title {
+    margin-bottom: 60px;
+}
+.pink {
+    shape-rendering: crispEdges;
+    fill: darken($green-color, 10%);
+}
+#maps-content {
+    overflow: hidden;
+    position: relative;
+}
+.map-content {
+    transition: .2s ease-in-out;
+}
+#maps-content.map-content {
+    transform: translateY(-100%);
+}
+#maps-content.active {
+    overflow: auto;
+    position: relative;
+}
+#maps-content.active .map-content {
+    transform: translateY(0);
+}
+
+#map-title {
+    margin-top: 30px;
+    color: $white-color;
+}
+#map-content {
+    margin-top: 10px;
+    padding: 0;
+    li {
+        list-style: none;
+        a {
+            color: $green-color;
+        }
+    }
+}
+#map-data {
+    display: none;
+    width: 300px;
+    margin-left: -150px;
+    height: 200px;
+    position: absolute;
+    background: $main-color;
+    border: 3px solid $main-color;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    transition: .2s ease-in-out;
+}
+#map-data:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -13px;
+    left: 140px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent $main-color transparent;
+}
+#map-data__close {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background: $red-color;
+    color: #fff;
+    border-radius: 50%;
+    transition: .2s ease-in-out;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-center: center;
+    outline: none;
+}
+#map-data__close:hover {
+    background: darken($red-color, 10%);
+    transform: scale(1.2) rotate(360deg);
+}
+#map-data__close i {
+    line-height: 1px;
+}
+
+#canvas {
+    position: absolute;
+    /*background: rgba(221, 238, 238, 0.25);*/
+}
