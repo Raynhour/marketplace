@@ -4,6 +4,9 @@
 @import "login/login";
 @import "videoblog/videoblog";
 @import "profile/profile";
+@import "price/price";
+@import "how-to-use/how-to-use";
+@import "mission/mission";
 
 @media (max-width: 1200px) {
     @import "index/index-max-1200";

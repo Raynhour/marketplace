@@ -24,8 +24,30 @@
             </div>
             <div class="col-md-6 align-center">
                 <ul class="top-nav">
-                    <li class="top-nav__item"><a href="#" class="top-nav__link">Ниши</a></li>
-                    <li class="top-nav__item"><a href="#" class="top-nav__link">Services</a></li>
+                    <li class="top-nav__item nav-has-child">
+                        <span class="top-nav__link">Ниши</span>
+                        <ul class="child animated">
+                            <li class="child__item"><a href="#" class="child__link">Sport</a></li>
+                            <li class="child__item"><a href="#" class="child__link">SMM-Media</a></li>
+                            <li class="child__item"><a href="#" class="child__link">Social Network</a></li>
+                            <li class="child__item"><a href="#" class="child__link">Big Data</a></li>
+                            <li class="child__item"><a href="#" class="child__link">SAAS</a></li>
+                            <li class="child__item"><a href="#" class="child__link">Healthcare</a></li>
+                            <li class="child__item"><a href="#" class="child__link">Travel</a></li>
+                            <li class="child__item"><a href="#" class="child__link">Fin tech</a></li>
+                        </ul>
+                    </li>
+                    <li class="top-nav__item nav-has-child">
+                        <span class="top-nav__link">Services</span>
+                        <ul class="child animated">
+                            <li class="child__item"><a href="#" class="child__link">Web Site</a></li>
+                            <li class="child__item"><a href="#" class="child__link">Mobile</a></li>
+                            <li class="child__item"><a href="#" class="child__link">Web service</a></li>
+                            <li class="child__item"><a href="#" class="child__link">Business solutions</a></li>
+                            <li class="child__item"><a href="#" class="child__link">Sturtup</a></li>
+                            <li class="child__item"><a href="#" class="child__link">CRM</a></li>
+                        </ul>
+                    </li>
                     <li class="top-nav__item"><a href="#" class="top-nav__link">For developers</a></li>
                     <li class="top-nav__item"><a href="#" class="top-nav__link">Videoblog</a></li>
                 </ul>
@@ -475,7 +497,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4"><img src="img/s6-phone.png"></div>
+            <div class="col-md-4"><img class="s6__phone" src="img/s6-phone.png"></div>
             <div class="col-md-4">
                 <div class="s6__items s6__right">
                     <div class="s6__item-icon"><img src="img/s6-4.png"></div>
@@ -682,6 +704,7 @@
 
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
+<script> animateHome(); </script>
 
 </body>
 </html>

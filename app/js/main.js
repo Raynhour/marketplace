@@ -27,7 +27,7 @@ $('document').ready(function(){
 
     $('#redesign').styler();
     $('#niche_').styler();
-    $('#remember, #account_type, #category, #country, #photo, #video, #main_image, #was_wasted, #price, #price_job, #payback').styler({
+    $('#remember, #account_type, #category, #country, #photo, #niche, #video, #main_image, #was_wasted, #price, #price_job, #payback').styler({
         fileBrowse: 'Выбрать файл'
     });
 
@@ -64,6 +64,45 @@ $('document').ready(function(){
         $(this).parent('.video').removeClass('active');
     });
 
+    // ============================= History =================================
+
+    $('.history__button').click(function (e) {
+        e.preventDefault();
+        var historyYear = $(this).data('year');
+        $('.history__text').removeClass('active');
+        $('.history__button').removeClass('active');
+        $(this).addClass('active');
+        $('#' + historyYear).addClass('active animated fadeIn');
+    });
+
+    // ============================= Navigation =================================
+
+    $('.nav-has-child').hover(
+        function () {
+            $(this).toggleClass('active').find('.child').toggleClass('bounceInDown');
+        },
+        function () {
+            $(this).toggleClass('active').find('.child').toggleClass('bounceInDown');
+        }
+    );
+
 });
 
 plyr.setup();
+
+// ========================== Animations ИНВЕСТИЦИИ ========================== //
+function animateHome() {
+    $('document').ready(function () {
+        var controller = new ScrollMagic.Controller();
+
+        new ScrollMagic.Scene({
+            triggerElement: ".s6",
+            offset: -100,
+            duration: 600
+        }).setTween(".s6__phone", {
+            transform: "translateY(0)"
+        })
+            // .addIndicators({name: "Phone"})
+            .addTo(controller);
+    });
+}

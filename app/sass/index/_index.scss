@@ -26,6 +26,9 @@
             background: url('../img/nav-separator.png') no-repeat;
         }
         &:last-child:after { display: none; }
+        .child {
+            display: none;
+        }
     }
     &__link {
         font-weight: 100;
@@ -39,6 +42,56 @@
             color: $white-color;
             text-decoration: none;
             border-color: $green-color;
+        }
+    }
+    &__item.active {
+        .top-nav__link {
+            color: $green-color;
+        }
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 3px;
+            left: 50%;
+            margin-left: -5px;
+            z-index: 99;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 8px 8px 8px;
+            border-color: transparent transparent $green-color transparent;
+            transition: .2s;
+        }
+        .child {
+            border-top: 3px solid $green-color;
+            display: block;
+            position: absolute;
+            padding: 0;
+            margin: 0;
+            margin-top: -3px;
+            z-index: 22;
+            background: lighten($main-color, 7%);
+            animation-duration: .5s;
+            &__item {
+                list-style: none;
+                text-align: left;
+                white-space: nowrap;
+            }
+            &__link {
+                font-weight: 100;
+                color: rgba($white-color, .7);
+                display: block;
+                padding: 10px 50px 10px 30px;
+                background: rgba($green-color, 0);
+                transition: .2s;
+                &:hover, &:focus, &:visited {
+                    cursor: pointer;
+                    color: $white-color;
+                    text-decoration: none;
+                    background: $green-color;
+                }
+            }
         }
     }
 }
@@ -438,12 +491,17 @@
 
 .s6 {
     background: radial-gradient(lighten($main-color, 10%), $main-color);
+    overflow: hidden;
     &__title {
         color: $white-color;
         text-align: center;
         margin-top: 50px;
         font-weight: 700;
         font-size: 30px;
+    }
+    &__phone {
+        transform: translateY(200px);
+        //opacity: 0;
     }
 }
 .s6__left {

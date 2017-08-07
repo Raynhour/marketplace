@@ -39,6 +39,11 @@ gulp.task('scripts', function() {
         'app/libs/bootstrap-select/dist/js/bootstrap-select.js',
         'app/libs/moment/min/moment.min.js',
         'app/libs/bootstrap-daterangepicker/daterangepicker.js',
+        'app/libs/scrollmagic/scrollmagic/uncompressed/ScrollMagic.js',
+        'app/libs/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js',
+        'app/libs/gsap/src/uncompressed/TweenMax.js',
+        'app/libs/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js',
+        'app/libs/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js'
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
