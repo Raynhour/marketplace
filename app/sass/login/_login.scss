@@ -1,0 +1,358 @@
+.login {
+    padding: 40px 0;
+    background: $white-color;
+    &__title {
+        color: $main-color;
+        font-weight: 700;
+        text-align: center;
+        font-size: 36px;
+        margin: 0 0 40px 0;
+    }
+}
+
+.form {
+    &__title {
+        color: $main-color;
+        font-weight: 700;
+        text-align: center;
+        font-size: 24px;
+        margin: 0 0 15px 0;
+        letter-spacing: 2px;
+    }
+    &__desc {
+        font-size: 14px;
+        color: rgba($main-color, .7);
+        text-align: center;
+        span {
+            color: $red-color;
+        }
+    }
+    &__group {
+        margin-bottom: 20px;
+        &__new {
+            margin-bottom: 20px;
+            .jq-file {
+                margin-bottom: 20px;
+            }
+        }
+    }
+    &__label {
+        display: block;
+        font-weight: 100;
+        color: rgba($main-color, .7);
+        margin-bottom: 3px;
+        span {
+            color: $red-color;
+        }
+        &__checkbox {
+            margin-left: 30px;
+        }
+    }
+    &__input, &__textarea {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 3px solid transparent;
+        background: rgba($main-color-light, .6);
+        padding: 15px 20px;
+        outline: none;
+        transition: .2s;
+        &:focus {
+            border-color: $main-color;
+        }
+    }
+    &__textarea {
+        height: 200px;
+    }
+    &__button {
+        @include button($green-color);
+        min-width: 250px;
+    }
+    .add-benefits__button {
+        color: rgba($main-color, .8);
+        display: block;
+        position: relative;
+        text-align: center;
+        transition: .2s;
+        &:hover, &:active, &:focus {
+            color: $red-color;
+            text-decoration: none;
+        }
+        img {
+            position: relative;
+            margin-top: -3px;
+        }
+    }
+    &__forget-link {
+        color: $green-color;
+        display: inline-block;
+        position: relative;
+        transition: .2s;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 2px;
+            height: 1px;
+            left: 0;
+            width: 100%;
+            background: $green-color;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $red-color;
+        }
+    }
+    &__soc__title {
+        color: $main-color;
+        letter-spacing: 1px;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    &__social-wrapper {
+        display: flex;
+        justify-content: flex-start;
+    }
+    &__social-link {
+        display: flex;
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid $main-color-light;
+        justify-content: center;
+        align-items: center;
+        transition: .2s;
+        &:hover { background: $main-color-light; }
+        &__facebook:hover {
+            background: #3b5998;
+            border-color: #3b5998;
+            img { filter: brightness(5); }
+        }
+        &__google:hover {
+            background: #ea4335;
+            border-color: #ea4335;
+            img { filter: brightness(5); }
+        }
+        &__linkedin:hover {
+            background: #0077b5;
+            border-color: #0077b5;
+            img { filter: brightness(5); }
+        }
+    }
+    .jq-selectbox__select,
+    .jq-selectbox {
+        width: 100%;
+        position: relative;
+    }
+    .jq-selectbox__select-text {
+        @extend .form__input;
+        position: relative;
+        margin-bottom: -6px;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            background: url('../img/select.png');
+            width: 6px;
+            height: 5px;
+        }
+    }
+    .jq-selectbox__dropdown {
+        width: 100%;
+        z-index: 12;
+        ul {
+            padding: 0;
+            li {
+                background: $main-color;
+                padding: 15px 20px;
+                transition: .2s;
+                color: rgba($white-color, .8);
+                &:hover {
+                    background: darken($green-color, 10%);
+                    cursor: pointer;
+                }
+            }
+            .disabled:hover {background: lighten($main-color, 5%); cursor: default;}
+            .disabled { background: lighten($main-color, 5%); }
+        }
+    }
+
+    .jq-checkbox {
+        width: 20px;
+        height: 20px;
+        background: rgba($main-color-light, .6);
+        display: inline-block;
+        position: absolute;
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: 4px;
+            bottom: 4px;
+            background: rgba($green-color, 0);
+            transition: .2s;
+        }
+    }
+    .jq-checkbox.checked {
+        &:after {
+            background: rgba($green-color, 1);
+        }
+    }
+
+    .jq-number {
+        width: 100%;
+        position: relative;
+        &__field {
+            display: block;
+            input {
+                @extend .form__input;
+            }
+        }
+        &__spin {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50%;
+            width: 40px;
+            background: $main-color;
+            right: 0;
+            transition: .2s;
+            &:hover {
+                background: $green-color;
+                cursor: pointer;
+            }
+            &:after, &:before {
+                display: block;
+                position: absolute;
+                color: rgba($white-color, .8);
+                font-weight: 700;
+                font-size: 17px;
+            }
+        }
+        .plus { top: 0; &:before { content: '+' }}
+        .minus { bottom: 0; &:after { content: '-' }}
+    }
+
+    .jq-file {
+        position: relative;
+    }
+    .jq-file__browse {
+        position: absolute;
+        background: $main-color;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 15px;
+        color: rgba($white-color, .8);
+        transition: .2s;
+    }
+
+    .bootstrap-select {
+        width: 100% !important;
+        display: block;
+        outline: none;
+        .dropdown-toggle {
+            @extend .form__input;
+            border-radius: 0;
+            outline: none;
+            &:active, &:focus {outline: none !important;}
+        }
+        .dropdown-menu {
+            padding: 0;
+            border-radius: 0;
+            margin-top: -3px;
+        }
+        .glyphicon {
+            margin-top: 16px !important;
+        }
+        ul {
+            padding: 0;
+            a {
+                background: $main-color;
+                padding: 15px 20px;
+                transition: .2s;
+                color: rgba($white-color, .8);
+                &:hover {
+                    background: darken($green-color, 10%);
+                    cursor: pointer;
+                }
+            }
+            .disabled a:hover {background: lighten($main-color, 5%); color: rgba($white-color, .8)}
+            .disabled a { background: lighten($main-color, 5%); }
+        }
+    }
+}
+
+.add-product {
+    .form__title {
+        text-transform: uppercase;
+        border-bottom: 3px solid rgba($main-color-light, .5);
+        padding-bottom: 20px;
+        margin: 20px 0;
+    }
+    .form__label {
+        font-weight: 700;
+        color: $main-color;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .form__forget-link {
+        color: rgba($main-color, .8);
+        &:after { display: none; }
+        &:hover { color: $red-color; }
+    }
+}
+
+.daterangepicker {
+    background: $main-color;
+    border-radius: 0;
+    margin-top: -2px;
+    &:after, &:before {
+        display: none;
+    }
+    .calendar-table {
+        border: none;
+        background: $main-color;
+        color: rgba($green-color, .8);
+        td {
+            background: $main-color;
+            color: $white-color;
+        }
+        td.off {
+            background: $main-color;
+            border-radius: 0;
+        }
+        td.start-date, td.end-date, td.in-range {
+            background: $green-color;
+            border-radius: 0;
+        }
+    }
+    .input-mini, .input-mini.active {
+        @extend .form__input;
+        background: rgba($main-color-light, .15);
+        border-radius: 0;
+        height: 48px;
+        color: rgba($white-color, .8);
+        &:focus {
+            box-shadow: none;
+            border-color: $green-color;
+        }
+    }
+    .fa-calendar { display: none; }
+    .applyBtn {
+        @include button($green-color);
+        display: block;
+        border-radius: 0;
+        width: 100%;
+    }
+    .cancelBtn {
+        display: none;
+    }
+}

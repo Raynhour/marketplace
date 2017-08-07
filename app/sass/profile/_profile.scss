@@ -1,0 +1,93 @@
+.profile {
+    margin-top: -100px;
+    padding: 0 0 40px;
+    &__top-background {
+        background-image: url('../img/bg.jpg');
+        background-position: center center;
+        background-size: cover;
+        width: 100%;
+        height: 400px;
+        border-bottom: 5px solid $main-color-light;
+    }
+    .container-fluid {
+        max-width: 1500px;
+    }
+    &__avatar {
+        position: relative;
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 5px solid $main-color-light;
+        background: $white-color;
+        background-size: cover;
+        background-position: center center;
+    }
+    &__title {
+        font-weight: 900;
+        font-size: 36px;
+        text-align: center;
+        color: $main-color;
+        text-transform: capitalize;
+    }
+    &__position {
+        font-weight: 700;
+        font-size: 20px;
+        text-align: center;
+        color: darken($main-color-light, 20%);
+    }
+    &__place {
+        font-size: 14px;
+        text-align: center;
+        color: darken($main-color-light, 20%);
+        img {
+            position: relative;
+            margin-top: -2px;
+            margin-right: 5px;
+        }
+        span {
+            margin-left: 40px;
+        }
+    }
+    &__tag-wrapper {
+        margin: 20px 0;
+    }
+    &__tag {
+        color: $main-color;
+        background: $main-color-light;
+        padding: 5px 20px;
+        margin: 5px;
+        transition: .2s;
+        &:hover {
+            text-decoration: none;
+            color: $white-color;
+            background: $green-color;
+        }
+    }
+    &__sub-title {
+        font-weight: 700;
+        font-size: 24px;
+        letter-spacing: 1px;
+        color: $main-color;
+        margin-bottom: 30px;
+    }
+    &__button-wrapper {
+        display: flex;
+        justify-content: center;
+    }
+    &__button {
+        margin: 0 20px;
+        &-edit { @include button($green-color); }
+        &-add { @include button($red-color); }
+        &-message { @include button($main-color); }
+        display: flex;
+        align-items: center;
+        img {
+            margin-left: 10px;
+        }
+    }
+    &__text {
+        color: darken($main-color-light, 25%);
+        font-size: 15px;
+    }
+}
