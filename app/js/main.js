@@ -86,6 +86,36 @@ $('document').ready(function(){
         }
     );
 
+
+    $('#city, #role, #lang').styler();
+
+    function readURL(input, position) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                var backgroundImage = 'background-image: url("' + e.target.result + '")';
+                position.attr('style', backgroundImage);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $('#change__photo').click(function () {
+        $('#photo_user').change(function () {
+           readURL(this, $('.profile__avatar'));
+       })
+    });
+
+    $('#change__cover').click(function () {
+        $('#photo_cover').change(function () {
+            readURL(this, $('.profile__top-background'));
+        })
+    });
+
+
+
 });
 
 plyr.setup();
