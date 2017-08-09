@@ -1,0 +1,103 @@
+.header {
+    &__wrapper {
+        display: block;
+        .align-right,
+        .align-left {
+            text-align: center;
+        }
+    }
+}
+.s1-form {
+    margin-right: 0;
+}
+.logo_gofriends {
+    margin-top: 10px;
+}
+.form__wrapper {
+    flex-direction: column;
+    padding: 0 15px;
+}
+.s1-form__input {
+    width: 100%;
+}
+.s1__button {
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+}
+.middle-nav__item {
+    display: inline-block;
+    width: 30%;
+}
+.middle-nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 16px;
+}
+.middle-nav__image {
+    margin-bottom: 10px;
+}
+
+.s2__wrapper {
+    display: block;
+    text-align: center;
+}
+.s2__link {
+    width: 49%;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+.product-cart__body-left {
+    width: 55%;
+}
+.product-cart__body-right {
+    width: 45%;
+}
+.s5__title {
+    margin: 20px 0;
+}
+
+.s6 {
+    .align-right {
+        text-align: left;
+    }
+    &__left {
+        flex-direction: row;
+    }
+}
+.s6__left .s6__item-icon {
+    margin-right: 20px;
+    margin-left: 0;
+}
+.s6__phone {
+    margin-left: -34px;
+    margin-top: -60px;
+}
+
+.s8__right {
+    right: 50%;
+    top: auto;
+    bottom: -60px;
+    transform: translate3d(110%, 0, 0);
+}
+.s8__left {
+    left: 50%;
+    top: auto;
+    bottom: -60px;
+    transform: translate3d(-110%, 0, 0);
+}
+.s10__form {
+    flex-direction: column;
+}
+.s10__input {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.prefooter__nav {
+    display: block;
+}

@@ -1,0 +1,62 @@
+.logo_gofriends {
+    width: 100%;
+    max-width: 251px;
+}
+.middle-nav__link {
+    padding: 15px;
+}
+.s1 {
+    padding: 20px 0 40px;
+}
+
+.comp {
+    display: flex;
+    flex-direction: column;
+    &__text {
+        position: relative;
+        top: 0;
+        left: auto;
+        right: auto;
+        width: auto;
+        height: auto;
+        text-align: left;
+        margin-bottom: 20px;
+    }
+    &__title {
+        text-align: center;
+    }
+    .comp__text-2 .comp__title {
+        color: $green-color;
+    }
+    &__image {
+        display: none;
+    }
+    &__supertitle {
+        text-align: center;
+        br {
+            display: none;
+        }
+    }
+}
+
+
+.s5__item {
+    padding: 0 15px;
+}
+
+.s6__item-title {
+    font-size: 16px;
+}
+.s6__item-text {
+    font-size: 14px;
+}
+.s6__phone {
+    margin-left: -69px;
+}
+.video {
+    padding: 8px;
+    margin-bottom: 30px;
+}
+.s10__input {
+     width: auto;
+}
