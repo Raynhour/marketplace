@@ -92,17 +92,22 @@ plyr.setup();
 
 // ========================== Animations ИНВЕСТИЦИИ ========================== //
 function animateHome() {
-    $('document').ready(function () {
-        var controller = new ScrollMagic.Controller();
+    var controller = new ScrollMagic.Controller();
+    var aniTrigger = ".s6",
+        aniOffset = -100;
 
-        new ScrollMagic.Scene({
-            triggerElement: ".s6",
-            offset: -100,
-            duration: 600
-        }).setTween(".s6__phone", {
-            transform: "translateY(0)"
-        })
-            // .addIndicators({name: "Phone"})
-            .addTo(controller);
-    });
+    if($(window).width() < 768) {
+        aniTrigger = ".s6__items-last";
+        aniOffset = -200;
+    }
+
+    new ScrollMagic.Scene({
+        triggerElement: aniTrigger,
+        offset: aniOffset,
+        duration: 600
+    }).setTween(".s6__phone", {
+        transform: "translateY(0)"
+    })
+        // .addIndicators({name: "Phone"})
+        .addTo(controller);
 }

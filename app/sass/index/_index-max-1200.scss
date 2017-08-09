@@ -1,0 +1,49 @@
+.top-nav__link {
+    padding: 20px 25px;
+}
+
+.middle-nav__link {
+    padding: 30px;
+}
+
+.comp__image {
+    max-width: 600px;
+}
+.comp__text {
+    width: 160px;
+}
+.comp__text-1, .comp__text-2, .comp__text-3 {
+    left: -0px;
+}
+.comp__text-4, .comp__text-5, .comp__text-6 {
+    right: -0px;
+}
+.comp__text-1,
+.comp__text-4 {
+    top: -20px;
+}
+.comp__text-2,
+.comp__text-5 {
+    top: 104px;
+}
+.comp__text-3,
+.comp__text-6 {
+    top: 239px;
+}
+
+.s6__phone {
+    margin-left: -30px;
+}
+
+.video__body {
+    height: 220px;
+}
+.video {
+    padding: 6px;
+}
+.video__footer {
+    font-size: 14px;
+}
+.video__date {
+    left: 4px;
+}

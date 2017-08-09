@@ -26,6 +26,9 @@ $black-color: #000;
         text-decoration: none;
         color: $white-color;
     }
+    @media (max-width: 767px) {
+        padding: 10px 30px;
+    }
 }
 
 $i: 10;
