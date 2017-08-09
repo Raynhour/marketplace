@@ -43,7 +43,10 @@ gulp.task('scripts', function() {
         'app/libs/scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators.js',
         'app/libs/gsap/src/uncompressed/TweenMax.js',
         'app/libs/scrollmagic/scrollmagic/uncompressed/plugins/animation.gsap.js',
-        'app/libs/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js'
+        'app/libs/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js',
+        'app/libs/jquery-textext/src/js/textext.core.js',
+        'app/libs/jquery-textext/src/js/textext.plugin.tags.js',
+        'app/libs/jquery-textext/src/js/textext.plugin.autocomplete.js'
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
