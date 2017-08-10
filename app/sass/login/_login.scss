@@ -11,6 +11,21 @@
 }
 
 .form {
+    &__image-wrapper {
+        display: flex;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    &__image {
+        width: 147px;
+        height: 147px;
+        background-size: cover;
+        background-position: center center;
+        margin: 5px;
+        position: relative;
+    }
+
     &__title {
         color: $main-color;
         font-weight: 700;
@@ -421,4 +436,30 @@
     background: rgba($main-color, .4);
     position: absolute;
     transform: translate3d(-50%, -30px, 0);
+}
+
+.form__image-input + label {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    color: $white-color;
+    position: absolute;
+    right: 3px;
+    top: 3px;
+    background: $green-color;
+    transition: .2s;
+    &:hover {
+        cursor: pointer;
+    }
+    span {
+        font-size: 12px;
+        position: relative;
+        top: -1px;
+    }
+}
+.form__image-input:checked + label {
+    background: $red-color;
 }

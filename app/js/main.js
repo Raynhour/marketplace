@@ -96,7 +96,7 @@ $('document').ready(function(){
             reader.onload = function (e) {
                 var backgroundImage = 'background-image: url("' + e.target.result + '")';
                 position.attr('style', backgroundImage);
-            }
+            };
 
             reader.readAsDataURL(input.files[0]);
         }
