@@ -46,7 +46,8 @@ gulp.task('scripts', function() {
         'app/libs/scrollmagic/scrollmagic/uncompressed/plugins/jquery.ScrollMagic.js',
         'app/libs/jquery-textext/src/js/textext.core.js',
         'app/libs/jquery-textext/src/js/textext.plugin.tags.js',
-        'app/libs/jquery-textext/src/js/textext.plugin.autocomplete.js'
+        'app/libs/jquery-textext/src/js/textext.plugin.autocomplete.js',
+        'app/libs/ion.rangeSlider/js/ion.rangeSlider.js'
         ])
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
