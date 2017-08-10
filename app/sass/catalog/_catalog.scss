@@ -78,8 +78,8 @@
         flex-wrap: wrap;
         justify-content: flex-start;
         .product-cart {
-            width: 100%;
-            max-width: 350px;
+            flex-basis: 350px;
+            flex-grow: 1;
             margin: 15px;
         }
     }

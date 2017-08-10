@@ -1902,8 +1902,13 @@
 }
 
 .catalog-s2__right .product-cart {
-  width: 100%;
-  max-width: 350px;
+  -webkit-flex-basis: 350px;
+      -ms-flex-preferred-size: 350px;
+          flex-basis: 350px;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   margin: 15px;
 }
 
