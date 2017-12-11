@@ -45,23 +45,160 @@
     </div>
 </div>
 
-<!-- Если пользователь не указал изображение профиля -->
+                    <!-- Если пользователь не указал изображение профиля -->
 <!--<div class="profile__top-background"></div>-->
 
 <!-- Если пользователь указал изображение профиля -->
-<div class="profile__top-background" style="background-image: url('img/profile_bg.jpg');"></div>
 
-<div class="profile">
+<div class="profile align-center" style="background-image: url('img/profile_bg.jpg');">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div class="profile__avatar" style="background-image: url('https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/contributor/2014/10/16/1413465405348/Mark-Hooper-L.png?w=300&q=55&auto=format&usm=12&fit=max&s=d9c8d779992a28512e458c184a022576');"></div>
+
+                <span class="profile__avatar-wrap"><div class="profile__avatar" style="background-image: url('https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/contributor/2014/10/16/1413465405348/Mark-Hooper-L.png?w=300&q=55&auto=format&usm=12&fit=max&s=d9c8d779992a28512e458c184a022576');"></div></span>
                 <h2 class="profile__title">Olshevskii Ivan</h2>
                 <p class="profile__position">Developer</p>
-                <p class="profile__place"><img src="img/place.png"> Киев, Украина <span>Язык: Английский, Руский</span></p>
+                <p class="profile__place">
+                    <img src="img/place.png"> Киев, Украина 
+                    <a href="#" class="profile__link"><img src="img/link.png" alt="link"> www.kainelabs.com</a> 
+                </p>
+                <div class="profile__block">
+                    <a href="#" class="profile__social"><img src="img/facebook-white.png" alt="facebook"></a>
+                    <a href="#" class="profile__social"><img src="img/instagram-white.png" alt="instagram"></a>
+                    <a href="#" class="profile__social"><img src="img/twitter-white.png" alt="twitter"></a>
+                    <a href="#" class="profile__social"><img src="img/youtube-white.png" alt="youtube"></a>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!-- BOTTOM HEADER NAVIGATION -->
+<div class="header-bot">
+    <div class="container-fluid">
         <div class="row">
+            <div class="col-sm-12 header__wrapper_bottom">
+                <ul class="middle-nav">
+                    <li class="middle-nav__item">
+                        <a href="#" class="middle-nav__link"><img src="img/overview.png" class="middle-nav__image"> overview</a>
+                    </li>
+                    <li class="middle-nav__item">
+                        <a href="#" class="middle-nav__link"><img src="img/info.png" class="middle-nav__image"> infos</a>
+                    </li>
+                    <li class="middle-nav__item">
+                        <a href="#" class="middle-nav__link"><img src="img/posts.png" class="middle-nav__image"> posts</a>
+                    </li>
+                    <li class="middle-nav__item">
+                        <a href="#" class="middle-nav__link"><img src="img/comments.png" class="middle-nav__image"> comments</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="settings">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="settings__box">
+                    <div class="settings__header">
+                        <h2 class="settings__title"><img src="img/hamburger.png" alt="settings"> <span> Skills</span></h2>
+                    </div>
+                    <div class="settings__body">
+                        <div class="settings__wrapper">
+                            <h3 class="settings__subtitle">Design</h3>
+                            <div class="settings__skill">
+                                <div class="settings__skill-inner" style="width:75%;"> </div>
+                                <div class="settings__skill-title">ui/ux</div>
+                                <div class="settings__skill-percentage">75%</div>
+                            </div>
+                            <div class="settings__skill">
+                                <div class="settings__skill-inner" style="width:65%;"> </div>
+                                <div class="settings__skill-title">photoshop</div>
+                                <div class="settings__skill-percentage">65%</div>
+                            </div>
+                        </div>
+                        <div class="settings__wrapper">
+                            <h3 class="settings__subtitle">Front-end</h3>
+                            <div class="settings__skill">
+                                <div class="settings__skill-inner" style="width:75%;"> </div>
+                                <div class="settings__skill-title">html</div>
+                                <div class="settings__skill-percentage">75%</div>
+                            </div>
+                            <div class="settings__skill">
+                                <div class="settings__skill-inner" style="width:65%;"> </div>
+                                <div class="settings__skill-title">css</div>
+                                <div class="settings__skill-percentage">65%</div>
+                            </div>
+                            <div class="settings__skill">
+                                    <div class="settings__skill-inner" style="width:50%;"> </div>
+                                    <div class="settings__skill-title">Angular</div>
+                                    <div class="settings__skill-percentage">50%</div>
+                            </div>
+                        </div>
+                        <div class="settings__wrapper">
+                            <h3 class="settings__subtitle">Back-end</h3>
+                            <div class="settings__skill">
+                                <div class="settings__skill-inner" style="width:75%;"> </div>
+                                <div class="settings__skill-title">php</div>
+                                <div class="settings__skill-percentage">75%</div>
+                            </div>
+                            <div class="settings__skill">
+                                <div class="settings__skill-inner" style="width:65%;"> </div>
+                                <div class="settings__skill-title">laravel</div>
+                                <div class="settings__skill-percentage">65%</div>
+                            </div>
+                            <div class="settings__skill">
+                                <div class="settings__skill-inner" style="width:30%;"> </div>
+                                <div class="settings__skill-title">ruby</div>
+                                <div class="settings__skill-percentage">30%</div>
+                            </div>
+                            <div class="settings__skill">
+                                <div class="settings__skill-inner" style="width:80%;"> </div>
+                                <div class="settings__skill-title">mysql</div>
+                                <div class="settings__skill-percentage">80%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="settings__box">
+                    <div class="settings__header">
+                        <div class="settings__title"><img src="img/setting-photo.png" alt="settings"> <span> Skills</span></div>
+                    </div>
+                    <div class="settings__body">
+                        <div class="row single-product-s3__gallery-wrapper">
+                            <a href="https://mir-s3-cdn-cf.behance.net/project_modules/1400/1104ee54389647.595a0c792d534.png">
+                                <div class="single-product-s3__gallery" style="background-image: url('https://mir-s3-cdn-cf.behance.net/projects/202/495ea754389647.Y3JvcCw4MTAsNjM0LDIsMA.jpg')"></div>
+                            </a>
+                            <a href="https://mir-s3-cdn-cf.behance.net/project_modules/1400/54672b23390303.5811b3eb29675.jpg">
+                                <div class="single-product-s3__gallery" style="background-image: url('https://mir-s3-cdn-cf.behance.net/projects/202/bc994023390303.Y3JvcCw0MDUsMzE3LDAsMA.jpeg')"></div>
+                            </a>
+                            <a href="https://mir-s3-cdn-cf.behance.net/project_modules/1400/aeb80632158897.594a406251496.png">
+                                <div class="single-product-s3__gallery" style="background-image: url('https://mir-s3-cdn-cf.behance.net/projects/202/29c27232158897.Y3JvcCwxMzQxLDEwNTAsMCww.png')"></div>
+                            </a>
+                            <a href="https://mir-s3-cdn-cf.behance.net/project_modules/1400/73fa0654354917.5957e45d21825.jpg">
+                                <div class="single-product-s3__gallery" style="background-image: url('https://mir-s3-cdn-cf.behance.net/projects/202/7deb6b54354917.Y3JvcCw4MTAsNjM0LDAsMA.png')"></div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- <div class="profile__avatar" style="background-image: url('https://i.guim.co.uk/img/static/sys-images/Guardian/Pix/contributor/2014/10/16/1413465405348/Mark-Hooper-L.png?w=300&q=55&auto=format&usm=12&fit=max&s=d9c8d779992a28512e458c184a022576');"></div>
+                <h2 class="profile__title">Olshevskii Ivan</h2>
+                <p class="profile__position">Developer</p>
+                <p class="profile__place"><img src="img/place.png"> Киев, Украина <span>Язык: Английский, Руский</span></p> -->
+            </div>
+        </div>
+        <!-- <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="profile__tag-wrapper align-center">
                     <a href="#" class="profile__tag">tag</a>
@@ -70,7 +207,7 @@
                     <a href="#" class="profile__tag">else another tag</a>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row"> <!-- If current_user != user remove class hide -->
             <div class="col-md-12">
                 <div class="profile__button-wrapper align-center mt-20 mb-20">

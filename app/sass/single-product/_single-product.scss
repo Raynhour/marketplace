@@ -1,5 +1,29 @@
 .single-product-s1 {
-    background: $white-color;
+    &__img {
+        width:100%;
+        height:789px;
+    }
+    &__settings {
+        background-color: #c8d2df;
+        margin-top:18px;
+        height:30px;
+        &-wrap {
+            margin-left:15px;
+            display:flex;
+            align-items:center;
+            height:100%;
+            cursor:pointer;
+        }
+        &-circle {
+            width:8px;
+            height:8px;
+            background-color:$white-color;
+            border-radius:50%;
+            display:inline-block;
+            margin-right:7px;
+        }
+    }
+    background: #eff3f8;
     padding: 60px 0;
     .container-fluid { max-width: 1410px; }
     /****** Style Star Rating Widget *****/
@@ -42,11 +66,89 @@
 }
 
 .sp {
+    &__section {
+        background-color:#fff;
+        padding-left:28px;
+        padding-right:28px;
+        &_padding {
+            padding-top:25px;
+            padding-bottom:25px;
+        }
+        &_2 {
+            height:297px;
+            overflow:auto;
+        }
+    }
+    &__header {
+        @extend .settings__header;
+    }
+    &__subtitle {
+        @extend .settings__title;
+    }
+    &__description {
+        font-weight: 400;
+        color: #4d525f;
+        font-size:18px;
+    }
+    &__support {
+        font-size:24px;
+        color: #404960;
+        font-weight:900;
+        padding-left:40px;
+        text-transform:uppercase;
+        position:relative;
+        &:before {
+            position:absolute;
+            content:"";
+            width:22px;
+            height:22px;
+            left:0;
+            top:6px;
+            background-repeat:no-repeat;
+        }
+        &:first-child:before {
+            background-image:url('../../img/support-audio.png');
+        }
+        &:nth-child(2):before {
+            background-image:url('../../img/support-safe.png');
+        }
+    }
+    &__benefit {
+        &-avatar {
+            width:128px;
+            height:128px;
+            background-color:#e7ecf3;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            margin:0 auto;
+            justify-content:center;
+        }
+        &-title {
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:17px;
+            text-align:center;
+            color:#4d525f;
+            font-size:24px;
+            font-weight:900;
+            max-width:190px;
+        }
+        &-description {
+            color:#6f7685;
+            max-width:163px;
+            margin:0 auto;
+            font-weight:400;
+            font-size:18px;
+
+        }
+    }
     &__title {
         font-weight: 700;
         color: $main-color;
         font-size: 47px;
-        margin-top: 0;
+        padding-top: 37px;
+        margin:0;
     }
     &__category {
         color: $main-color;
@@ -64,6 +166,9 @@
 
 .sp-objective {
     margin-top: 40px;
+    &_bottom {
+        padding-bottom:35px;
+    }
     &__title {
         font-weight: 700;
         text-transform: uppercase;
@@ -155,7 +260,7 @@
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid rgba($main-color, .2);
-        margin-bottom: 30px;
+        padding-top: 30px;
         &:last-child {
             margin-bottom: 0;
         }
@@ -163,14 +268,14 @@
     &__left {
         margin: 0;
         color: $main-color;
-        font-weight: 700;
+        font-weight: 900;
         text-transform: uppercase;
         font-size: 16px;
     }
     &__right {
         margin: 0;
         color: $main-color;
-        font-weight: 700;
+        font-weight: 900;
         font-size: 16px;
     }
     &__last-row {
@@ -199,6 +304,7 @@
     @extend .sp-card;
     background: none;
     padding: 0;
+    margin:0;
     &:after {
         display: none;
     }

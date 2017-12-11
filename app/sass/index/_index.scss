@@ -7,6 +7,9 @@
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        &_bottom {
+            background-color: #4d525f;
+        }
     }
 }
 
@@ -146,6 +149,46 @@
     }
 }
 
+// =============================== Global section style ===========================
+
+.section {
+    padding-top: 38px;
+    &__title {
+        text-align: center;
+        font-weight: 900;
+        text-transform: uppercase;
+        color: $main-color;
+        margin-bottom: 40px;
+    }
+}
+
+// =============================== CATEGORY ===========================
+
+.category {
+    padding-bottom: 45px;
+    &__link {
+        display: block;
+        background-position: center center;
+        background-size: cover;
+        min-height: 275px;
+        &_big {
+            min-height: 563px;
+        }
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &__title {
+        text-align: center;
+        padding-top: 30px;
+        font-size: 30px;
+        font-weight:900;
+        &_light {
+            color:$white-color;
+        }
+    }
+}
+
 // =============================== S1 ===========================
 
 .s1 {
@@ -209,21 +252,33 @@
 }
 
 .middle-nav {
-    margin-top: 20px;
     margin-bottom: 0;
     padding-left: 0;
     text-align: center;
+    &_bg {
+        background-color: $light-grey-color;
+    }
+    &_left {
+        text-align: left;
+    }
     &__item {
         list-style: none;
         display: inline-block;
     }
     &__link {
-        color: $white-color;
-        padding: 40px;
-        font-weight: 100;
+        color: #c9cfdd;
+        padding: 20px 46px;  
+        font-weight: 900;
         display: block;
+        text-transform: uppercase;
         filter: grayscale(1);
         transition: .2s;
+        border-bottom: 7px solid transparent;
+        .header-bot &:hover,.header-bot &:focus {
+            border-bottom: 7px solid $green-color;
+            background:inherit;
+            color:#c9cfdd;
+        }
         &:hover,
         &:focus {
             background: rgba($main-color, .2);
@@ -237,6 +292,10 @@
         margin-top: -3px;
         margin-right: 5px;
     }
+}
+
+.header-bot {
+    
 }
 
 // =============================== S2 ===========================
@@ -254,6 +313,10 @@
         padding: 20px 40px 16px;
         transition: .2s;
         opacity: .5;
+        color: #c9cfdd;
+        font-weight:900;
+        text-transform: uppercase;
+        color:$main-color;
         border-bottom: 4px solid transparent;
         &:hover {
             color: $main-color;
@@ -408,9 +471,6 @@
 // =============================== S4 ===========================
 
 .s4 {
-    background-image: url('../img/s4-bg.png');
-    background-size: cover;
-    background-position: center center;
     padding: 40px 0;
     &__title {
         text-align: center;
@@ -436,16 +496,16 @@
             text-align: right;
             left: -50px;
         }
-        &-1 { top: 32px; .comp__title { color: #ff5a5a; }}
-        &-2 { top: 184px; .comp__title { color: #29eb91; } }
-        &-3 { top: 332px; .comp__title { color: #ffa772; } }
+        &-1 { top: 3px; .comp__title { color: #ff5a5a; }}
+        &-2 { top: 153px; .comp__title { color: #29eb91; } }
+        &-3 { top: 295px; .comp__title { color: #ffa772; } }
         &-4, &-5, &-6 {
             text-align: left;
             right: -50px;
         }
-        &-4 { top: 32px; .comp__title { color: #68baff; } }
-        &-5 { top: 184px; .comp__title { color: #9171ff; } }
-        &-6 { top: 380px; }
+        &-4 { top: 3px; .comp__title { color: #68baff; } }
+        &-5 { top: 153px; .comp__title { color: #9171ff; } }
+        &-6 { top: 295px; height:200px; }
     }
     &__title {
         font-weight: 700;
@@ -461,16 +521,17 @@
     &__supertitle {
         font-size: 30px;
         font-weight: 700;
-        color: $main-color;
-        text-decoration: underline;
-        text-decoration-color: $red-color;
+        color: $main-color; 
+        &_inner {
+            color:#29eb91;
+        }
     }
 }
 
 // =============================== S5 ===========================
 
 .s5 {
-    padding: 70px 0;
+    padding: 40px 0;
     &__item {
         padding: 0 60px;
     }
@@ -543,6 +604,8 @@
 .s8 {
     background: rgba($main-color, .02);
     padding: 40px 0;
+    background-size:cover;
+    background-position: top center;
     &__items-wrapper {
         position: relative;
     }
@@ -565,8 +628,8 @@
         font-weight: 700;
     }
     &__text {
-        font-size: 14px;
-        color: rgba($main-color, .8);
+        font-size: 18px;
+        color: rgba($main-color, 1);
         line-height: 20px;
         font-weight: 100;
     }

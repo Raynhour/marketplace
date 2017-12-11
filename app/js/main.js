@@ -23,8 +23,10 @@ $('document').ready(function(){
         dots: true
     });
 
-    $('#gallery').photobox('a',{ time:0 });
-
+    var galeries = $("div[id^='gallery']");
+    $.each(galeries, function(){
+        $('#' + $(this).attr('id')).photobox('a'); 
+    });
     $('#redesign').styler();
     $('#niche_').styler();
     $('#remember, #account_type, #category, #country, #photo, #niche, #video, #main_image, #was_wasted, #price, #price_job, #payback').styler({

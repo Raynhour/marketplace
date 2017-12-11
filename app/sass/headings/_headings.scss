@@ -1,0 +1,16 @@
+.headings {
+  &__box {
+    display:inline-block;
+    width:100%;
+    max-width:250px;
+    height:190px;
+    padding:25px 0px;
+    border:1px solid transparent;
+    color: $heading-color;
+    &:hover, &:focus {
+      text-decoration: none;
+      color: $heading-color;
+      border: 1px solid $choose-color;
+    }
+  }
+}

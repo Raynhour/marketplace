@@ -1,6 +1,8 @@
 .profile {
-    margin-top: -100px;
-    padding: 0 0 40px;
+    background-position: center center;
+    background-size: cover;
+    padding-top:20px;
+    padding-bottom:30px; 
     &__top-background {
         background-image: url('../img/bg.jpg');
         background-position: center center;
@@ -18,28 +20,35 @@
         width: 200px;
         height: 200px;
         border-radius: 50%;
-        border: 5px solid $main-color-light;
+
         background: $white-color;
         background-size: cover;
         background-position: center center;
+        &-wrap {
+            border-radius:50%;
+            display:inline-block;
+            border: 10px solid rgba($white-color, .18);
+        }
     }
     &__title {
         font-weight: 900;
-        font-size: 36px;
+        font-size: 24px;
         text-align: center;
-        color: $main-color;
+        color: $white-color;
         text-transform: capitalize;
     }
     &__position {
         font-weight: 700;
-        font-size: 20px;
+        font-size: 18px;
+        text-transform: uppercase;
         text-align: center;
-        color: darken($main-color-light, 20%);
+        color: rgba($white-color, .58);
     }
     &__place {
         font-size: 14px;
         text-align: center;
-        color: darken($main-color-light, 20%);
+        color: $white-color;
+        text-transform: uppercase;
         img {
             position: relative;
             margin-top: -2px;
@@ -47,6 +56,38 @@
         }
         span {
             margin-left: 40px;
+        }
+    }
+    &__link {
+        color:$white-color;
+        text-transform: uppercase;
+        padding-left:22px;
+        transition: all 0.3s;
+        &:hover, &:link {
+            text-decoration: none;
+        }
+        &:hover {
+            color: $green-color;
+        }
+    }
+    &__block {
+        padding-top:15px;              
+    }
+    &__social {
+        background-color: rgba($white-color, .2);
+        display: inline-block;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        margin-right:27px;
+        & img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
         }
     }
     &__tag-wrapper {
@@ -89,5 +130,126 @@
     &__text {
         color: darken($main-color-light, 25%);
         font-size: 15px;
+    }
+}
+
+.settings {
+    background-color: #eff3f8;
+    padding-top:29px;
+    padding-bottom:47px;
+    &__header {
+        color:$white-color;
+        background-color: #4d525f;
+        padding-left:20px;
+    }
+    &__body {
+        background-color:$white-color;
+        padding-top:28px;
+        padding-bottom:35px;
+    }
+    &__title {
+        font-size:18px;
+        margin-bottom:0px;
+        line-height: 60px;
+        color:#fff;
+        font-weight:900;
+        margin-top:0px;
+        text-transform: uppercase;
+        & img {
+            position: relative;
+            margin-top: -3px;
+            margin-right: 5px;
+        }
+    }
+    &__subtitle {
+        font-size: 24px;
+        color: #404960;
+        font-weight:900;
+        margin: 0;
+    }
+    &__wrapper {
+        padding-left:40px;
+        padding-top:43px;   
+        padding-right:40px;
+    }
+    &__skill {
+        background-color: #e0e6ee;
+        position:relative;
+        height:49px;
+        margin-top:20px;
+        // --------- COLOR PERCENTAGE --------- //
+        &:nth-child(4n + 2) {
+            .settings__skill-inner {
+                background-color: lighten(#fd5937, 20%);
+            }
+        }
+        &:nth-child(4n +3) {
+            .settings__skill-inner {
+                background-color: lighten(#f8e21b, 20%);
+            }
+        }
+        &:nth-child(4n +4) {
+            .settings__skill-inner {
+                background-color: lighten(#5da8d5, 20%);
+            }
+        }
+        &:nth-child(4n +5) {
+            .settings__skill-inner {
+                background-color: lighten(#49c39a, 20%);
+            }
+        }
+        // --------- COLOR TITLE --------- //
+        &:nth-child(4n + 2) {
+            .settings__skill-title {
+                background-color: #fd5937;
+            }
+        }
+        &:nth-child(4n +3) {
+            .settings__skill-title {
+                background-color: #f8e21b;
+            }
+        }
+        &:nth-child(4n +4) {
+            .settings__skill-title {
+                background-color: #5da8d5;
+            }
+        }
+        &:nth-child(4n +5) {
+            .settings__skill-title {
+                background-color: #49c39a;
+            }
+        }
+        &-inner {
+            height:49px;
+           
+            // &:nth-child(2) {
+            //     background-color: lighten(#f8e21b, 20%);
+            // }
+        }
+        &-title {
+            position:absolute;
+            left:0;
+            background-color: #fd5937;
+            bottom:0;
+            top:0;
+            padding-top:17px;
+            color:#fff;
+            text-transform: uppercase;
+            font-size:16px;
+            font-weight:900;
+            z-index: 5;
+            padding-left:16px;
+            padding-right:16px;
+            margin:auto;
+
+        }
+        &-percentage {
+            right:16px;
+            position:absolute;
+            top:calc(50% - 8px);
+            font-size: 16px;
+            color: #4d525f;
+            font-weight:900;
+        }
     }
 }

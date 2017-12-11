@@ -8269,14 +8269,6 @@ button.close {
   width: 100%;
 }
 
-.plyr input[type=range]:focus, .plyr:focus {
-  outline: 0;
-}
-
-.plyr .plyr__video-embed iframe, .plyr__tooltip {
-  pointer-events: none;
-}
-
 @-webkit-keyframes plyr-progress {
   to {
     background-position: 25px 0;
@@ -8299,12 +8291,16 @@ button.close {
 
 .plyr, .plyr *, .plyr ::after, .plyr ::before {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .plyr a, .plyr button, .plyr input, .plyr label {
   -ms-touch-action: manipulation;
   touch-action: manipulation;
+}
+
+.plyr:focus {
+  outline: 0;
 }
 
 .plyr audio, .plyr video {
@@ -8321,10 +8317,8 @@ button.close {
   width: 100%;
   margin: 0;
   padding: 0;
-  vertical-align: middle;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
   cursor: pointer;
   border: none;
   background: 0 0;
@@ -8355,9 +8349,9 @@ button.close {
   transition: background .2s ease,border .2s ease,transform .2s ease;
   transition: background .2s ease,border .2s ease,transform .2s ease,-webkit-transform .2s ease;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.15);
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .plyr input[type=range]::-moz-range-track {
@@ -8402,6 +8396,7 @@ button.close {
 
 .plyr input[type=range]::-ms-fill-lower {
   height: 8px;
+  background: 0 0;
   border: 0;
   border-radius: 4px;
   -ms-user-select: none;
@@ -8429,6 +8424,10 @@ button.close {
   display: none;
 }
 
+.plyr input[type=range]:focus {
+  outline: 0;
+}
+
 .plyr input[type=range]::-moz-focus-outer {
   border: 0;
 }
@@ -8441,7 +8440,7 @@ button.close {
   background: #3498db;
   border-color: #fff;
   -webkit-transform: scale(1.25);
-          transform: scale(1.25);
+  transform: scale(1.25);
 }
 
 .plyr input[type=range]:active::-moz-range-thumb {
@@ -8458,11 +8457,11 @@ button.close {
 }
 
 .plyr--video input[type=range].tab-focus:focus {
-  outline: rgba(255, 255, 255, 0.5) dotted 1px;
+  outline: 1px dotted rgba(255, 255, 255, 0.5);
 }
 
 .plyr--audio input[type=range].tab-focus:focus {
-  outline: rgba(86, 93, 100, 0.5) dotted 1px;
+  outline: 1px dotted rgba(86, 93, 100, 0.5);
 }
 
 .plyr__sr-only {
@@ -8508,8 +8507,12 @@ button.close {
   position: relative;
   padding-bottom: 200%;
   -webkit-transform: translateY(-35.95%);
-      -ms-transform: translateY(-35.95%);
-          transform: translateY(-35.95%);
+  -ms-transform: translateY(-35.95%);
+      transform: translateY(-35.95%);
+}
+
+.plyr .plyr__video-embed iframe {
+  pointer-events: none;
 }
 
 .plyr video::-webkit-media-text-track-container {
@@ -8524,12 +8527,13 @@ button.close {
   width: 100%;
   padding: 20px;
   -webkit-transform: translateY(-40px);
-      -ms-transform: translateY(-40px);
-          transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+      transform: translateY(-40px);
   -webkit-transition: -webkit-transform .3s ease;
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease, -webkit-transform .3s ease;
+  transition: transform .3s ease,-webkit-transform .3s ease;
   color: #fff;
   font-size: 16px;
   text-align: center;
@@ -8562,8 +8566,8 @@ button.close {
 
 .plyr--hide-controls .plyr__captions {
   -webkit-transform: translateY(-15px);
-      -ms-transform: translateY(-15px);
-          transform: translateY(-15px);
+  -ms-transform: translateY(-15px);
+      transform: translateY(-15px);
 }
 
 @media (min-width: 1024px) {
@@ -8577,16 +8581,21 @@ button.close {
 }
 
 .plyr__controls {
-  display: -ms-flexbox;
   display: -webkit-box;
+  display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -ms-flex-align: center;
   -webkit-box-align: center;
+  -ms-flex-align: center;
   -webkit-align-items: center;
           align-items: center;
   line-height: 1;
   text-align: center;
+  pointer-events: none;
+}
+
+.plyr__controls > * {
+  pointer-events: all;
 }
 
 .plyr__controls .plyr__progress, .plyr__controls .plyr__time, .plyr__controls > button {
@@ -8680,10 +8689,10 @@ button.close {
           border-radius: inherit;
   background: #fff;
   border: 1px solid #dbe3e8;
-  color: #565D64;
+  color: #565d64;
 }
 
-.plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover, .plyr__play-large {
+.plyr--audio .plyr__controls button.tab-focus:focus, .plyr--audio .plyr__controls button:hover {
   background: #3498db;
   color: #fff;
 }
@@ -8695,14 +8704,16 @@ button.close {
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
   padding: 10px;
+  background: #3498db;
   border: 4px solid currentColor;
   -webkit-border-radius: 100%;
           border-radius: 100%;
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+  color: #fff;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
@@ -8717,20 +8728,24 @@ button.close {
 }
 
 .plyr__play-large:focus {
-  outline: rgba(255, 255, 255, 0.5) dotted 1px;
+  outline: 1px dotted rgba(255, 255, 255, 0.5);
 }
 
 .plyr .plyr__play-large {
   display: inline-block;
 }
 
-.plyr--audio .plyr__play-large, .plyr--playing .plyr__controls [data-plyr=play], .plyr__controls [data-plyr=pause] {
+.plyr--audio .plyr__play-large {
   display: none;
 }
 
 .plyr--playing .plyr__play-large {
   opacity: 0;
   visibility: hidden;
+}
+
+.plyr--playing .plyr__controls [data-plyr=play], .plyr__controls [data-plyr=pause] {
+  display: none;
 }
 
 .plyr--playing .plyr__controls [data-plyr=pause] {
@@ -8741,7 +8756,11 @@ button.close {
   display: block;
 }
 
-.plyr [data-plyr=captions], .plyr [data-plyr=fullscreen], .plyr--captions-active .plyr__controls .icon--captions-on + svg, .plyr--fullscreen-active .icon--exit-fullscreen + svg, .plyr--muted .plyr__controls .icon--muted + svg {
+.plyr--captions-active .plyr__controls .icon--captions-on + svg, .plyr--fullscreen-active .icon--exit-fullscreen + svg, .plyr--muted .plyr__controls .icon--muted + svg {
+  display: none;
+}
+
+.plyr [data-plyr=captions], .plyr [data-plyr=fullscreen] {
   display: none;
 }
 
@@ -8755,6 +8774,7 @@ button.close {
   bottom: 100%;
   margin-bottom: 10px;
   padding: 5px 7.5px;
+  pointer-events: none;
   opacity: 0;
   background: rgba(0, 0, 0, 0.7);
   -webkit-border-radius: 3px;
@@ -8763,11 +8783,11 @@ button.close {
   font-size: 14px;
   line-height: 1.3;
   -webkit-transform: translate(-50%, 10px) scale(0.8);
-      -ms-transform: translate(-50%, 10px) scale(0.8);
-          transform: translate(-50%, 10px) scale(0.8);
+  -ms-transform: translate(-50%, 10px) scale(0.8);
+      transform: translate(-50%, 10px) scale(0.8);
   -webkit-transform-origin: 50% 100%;
-      -ms-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
+  -ms-transform-origin: 50% 100%;
+      transform-origin: 50% 100%;
   -webkit-transition: opacity .2s .1s ease,-webkit-transform .2s .1s ease;
   transition: opacity .2s .1s ease,-webkit-transform .2s .1s ease;
   transition: transform .2s .1s ease,opacity .2s .1s ease;
@@ -8781,8 +8801,8 @@ button.close {
   height: 0;
   left: 50%;
   -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+      transform: translateX(-50%);
   bottom: -4px;
   border-right: 4px solid transparent;
   border-top: 4px solid rgba(0, 0, 0, 0.7);
@@ -8793,8 +8813,8 @@ button.close {
 .plyr button.tab-focus:focus .plyr__tooltip, .plyr button:hover .plyr__tooltip, .plyr__tooltip--visible {
   opacity: 1;
   -webkit-transform: translate(-50%, 0) scale(1);
-      -ms-transform: translate(-50%, 0) scale(1);
-          transform: translate(-50%, 0) scale(1);
+  -ms-transform: translate(-50%, 0) scale(1);
+      transform: translate(-50%, 0) scale(1);
 }
 
 .plyr button:hover .plyr__tooltip {
@@ -8804,11 +8824,11 @@ button.close {
 .plyr__controls button:first-child .plyr__tooltip {
   left: 0;
   -webkit-transform: translate(0, 10px) scale(0.8);
-      -ms-transform: translate(0, 10px) scale(0.8);
-          transform: translate(0, 10px) scale(0.8);
+  -ms-transform: translate(0, 10px) scale(0.8);
+      transform: translate(0, 10px) scale(0.8);
   -webkit-transform-origin: 0 100%;
-      -ms-transform-origin: 0 100%;
-          transform-origin: 0 100%;
+  -ms-transform-origin: 0 100%;
+      transform-origin: 0 100%;
 }
 
 .plyr__controls button:first-child .plyr__tooltip::before {
@@ -8818,32 +8838,32 @@ button.close {
 .plyr__controls button:last-child .plyr__tooltip {
   right: 0;
   -webkit-transform: translate(0, 10px) scale(0.8);
-      -ms-transform: translate(0, 10px) scale(0.8);
-          transform: translate(0, 10px) scale(0.8);
+  -ms-transform: translate(0, 10px) scale(0.8);
+      transform: translate(0, 10px) scale(0.8);
   -webkit-transform-origin: 100% 100%;
-      -ms-transform-origin: 100% 100%;
-          transform-origin: 100% 100%;
+  -ms-transform-origin: 100% 100%;
+      transform-origin: 100% 100%;
 }
 
 .plyr__controls button:last-child .plyr__tooltip::before {
   left: auto;
   right: 16px;
   -webkit-transform: translateX(50%);
-      -ms-transform: translateX(50%);
-          transform: translateX(50%);
+  -ms-transform: translateX(50%);
+      transform: translateX(50%);
 }
 
 .plyr__controls button:first-child .plyr__tooltip--visible, .plyr__controls button:first-child.tab-focus:focus .plyr__tooltip, .plyr__controls button:first-child:hover .plyr__tooltip, .plyr__controls button:last-child .plyr__tooltip--visible, .plyr__controls button:last-child.tab-focus:focus .plyr__tooltip, .plyr__controls button:last-child:hover .plyr__tooltip {
   -webkit-transform: translate(0, 0) scale(1);
-      -ms-transform: translate(0, 0) scale(1);
-          transform: translate(0, 0) scale(1);
+  -ms-transform: translate(0, 0) scale(1);
+      transform: translate(0, 0) scale(1);
 }
 
 .plyr__progress {
   position: relative;
   display: none;
-  -ms-flex: 1;
   -webkit-box-flex: 1;
+  -ms-flex: 1;
   -webkit-flex: 1;
           flex: 1;
 }
@@ -8884,7 +8904,6 @@ button.close {
   vertical-align: top;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
   border: none;
   -webkit-border-radius: 100px;
           border-radius: 100px;
@@ -8976,7 +8995,7 @@ button.close {
 
 .plyr--loading .plyr__progress--buffer {
   -webkit-animation: plyr-progress 1s linear infinite;
-          animation: plyr-progress 1s linear infinite;
+  animation: plyr-progress 1s linear infinite;
   background-size: 25px 25px;
   background-repeat: repeat-x;
   background-image: -webkit-linear-gradient(135deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
@@ -9018,8 +9037,8 @@ button.close {
 }
 
 .plyr .plyr__volume {
-  -ms-flex: 1;
   -webkit-box-flex: 1;
+  -ms-flex: 1;
   -webkit-flex: 1;
           flex: 1;
   position: relative;
@@ -9048,14 +9067,8 @@ button.close {
 }
 
 .plyr--fullscreen-active {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   height: 100%;
   width: 100%;
-  z-index: 10000000;
   background: #000;
   -webkit-border-radius: 0 !important;
           border-radius: 0 !important;
@@ -9074,19 +9087,21 @@ button.close {
   overflow: visible;
 }
 
-.plyr--fullscreen-active .plyr__controls {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
 .plyr--fullscreen-active.plyr--vimeo .plyr__video-wrapper {
   height: 0;
   top: 50%;
   -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+}
+
+.plyr--fullscreen-fallback.plyr--fullscreen-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000000;
 }
 
 /* Normilizes box-sizing  */
@@ -9934,9 +9949,9 @@ button.close {
 .jq-select-multiple select {
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   margin: 0;
   padding: 0;
   opacity: 0;
@@ -10369,419 +10384,6 @@ select.selectpicker {
 }
 
 /*# sourceMappingURL=bootstrap-select.css.map */
-.daterangepicker {
-  position: absolute;
-  color: inherit;
-  background-color: #fff;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
-  width: 278px;
-  padding: 4px;
-  margin-top: 1px;
-  top: 100px;
-  left: 20px;
-  /* Calendars */
-}
-
-.daterangepicker:before, .daterangepicker:after {
-  position: absolute;
-  display: inline-block;
-  border-bottom-color: rgba(0, 0, 0, 0.2);
-  content: '';
-}
-
-.daterangepicker:before {
-  top: -7px;
-  border-right: 7px solid transparent;
-  border-left: 7px solid transparent;
-  border-bottom: 7px solid #ccc;
-}
-
-.daterangepicker:after {
-  top: -6px;
-  border-right: 6px solid transparent;
-  border-bottom: 6px solid #fff;
-  border-left: 6px solid transparent;
-}
-
-.daterangepicker.opensleft:before {
-  right: 9px;
-}
-
-.daterangepicker.opensleft:after {
-  right: 10px;
-}
-
-.daterangepicker.openscenter:before {
-  left: 0;
-  right: 0;
-  width: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.daterangepicker.openscenter:after {
-  left: 0;
-  right: 0;
-  width: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.daterangepicker.opensright:before {
-  left: 9px;
-}
-
-.daterangepicker.opensright:after {
-  left: 10px;
-}
-
-.daterangepicker.dropup {
-  margin-top: -5px;
-}
-
-.daterangepicker.dropup:before {
-  top: initial;
-  bottom: -7px;
-  border-bottom: initial;
-  border-top: 7px solid #ccc;
-}
-
-.daterangepicker.dropup:after {
-  top: initial;
-  bottom: -6px;
-  border-bottom: initial;
-  border-top: 6px solid #fff;
-}
-
-.daterangepicker.dropdown-menu {
-  max-width: none;
-  z-index: 3001;
-}
-
-.daterangepicker.single .ranges, .daterangepicker.single .calendar {
-  float: none;
-}
-
-.daterangepicker.show-calendar .calendar {
-  display: block;
-}
-
-.daterangepicker .calendar {
-  display: none;
-  max-width: 270px;
-  margin: 4px;
-}
-
-.daterangepicker .calendar.single .calendar-table {
-  border: none;
-}
-
-.daterangepicker .calendar th, .daterangepicker .calendar td {
-  white-space: nowrap;
-  text-align: center;
-  min-width: 32px;
-}
-
-.daterangepicker .calendar-table {
-  border: 1px solid #fff;
-  padding: 4px;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
-  background-color: #fff;
-}
-
-.daterangepicker table {
-  width: 100%;
-  margin: 0;
-}
-
-.daterangepicker td, .daterangepicker th {
-  text-align: center;
-  width: 20px;
-  height: 20px;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.daterangepicker td.available:hover, .daterangepicker th.available:hover {
-  background-color: #eee;
-  border-color: transparent;
-  color: inherit;
-}
-
-.daterangepicker td.week, .daterangepicker th.week {
-  font-size: 80%;
-  color: #ccc;
-}
-
-.daterangepicker td.off, .daterangepicker td.off.in-range, .daterangepicker td.off.start-date, .daterangepicker td.off.end-date {
-  background-color: #fff;
-  border-color: transparent;
-  color: #999;
-}
-
-.daterangepicker td.in-range {
-  background-color: #ebf4f8;
-  border-color: transparent;
-  color: #000;
-  -webkit-border-radius: 0;
-          border-radius: 0;
-}
-
-.daterangepicker td.start-date {
-  -webkit-border-radius: 4px 0 0 4px;
-          border-radius: 4px 0 0 4px;
-}
-
-.daterangepicker td.end-date {
-  -webkit-border-radius: 0 4px 4px 0;
-          border-radius: 0 4px 4px 0;
-}
-
-.daterangepicker td.start-date.end-date {
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
-}
-
-.daterangepicker td.active, .daterangepicker td.active:hover {
-  background-color: #357ebd;
-  border-color: transparent;
-  color: #fff;
-}
-
-.daterangepicker th.month {
-  width: auto;
-}
-
-.daterangepicker td.disabled, .daterangepicker option.disabled {
-  color: #999;
-  cursor: not-allowed;
-  text-decoration: line-through;
-}
-
-.daterangepicker select.monthselect, .daterangepicker select.yearselect {
-  font-size: 12px;
-  padding: 1px;
-  height: auto;
-  margin: 0;
-  cursor: default;
-}
-
-.daterangepicker select.monthselect {
-  margin-right: 2%;
-  width: 56%;
-}
-
-.daterangepicker select.yearselect {
-  width: 40%;
-}
-
-.daterangepicker select.hourselect, .daterangepicker select.minuteselect, .daterangepicker select.secondselect, .daterangepicker select.ampmselect {
-  width: 50px;
-  margin-bottom: 0;
-}
-
-.daterangepicker .input-mini {
-  border: 1px solid #ccc;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
-  color: #555;
-  height: 30px;
-  line-height: 30px;
-  display: block;
-  vertical-align: middle;
-  margin: 0 0 5px 0;
-  padding: 0 6px 0 28px;
-  width: 100%;
-}
-
-.daterangepicker .input-mini.active {
-  border: 1px solid #08c;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
-}
-
-.daterangepicker .daterangepicker_input {
-  position: relative;
-}
-
-.daterangepicker .daterangepicker_input i {
-  position: absolute;
-  left: 8px;
-  top: 8px;
-}
-
-.daterangepicker.rtl .input-mini {
-  padding-right: 28px;
-  padding-left: 6px;
-}
-
-.daterangepicker.rtl .daterangepicker_input i {
-  left: auto;
-  right: 8px;
-}
-
-.daterangepicker .calendar-time {
-  text-align: center;
-  margin: 5px auto;
-  line-height: 30px;
-  position: relative;
-  padding-left: 28px;
-}
-
-.daterangepicker .calendar-time select.disabled {
-  color: #ccc;
-  cursor: not-allowed;
-}
-
-.ranges {
-  font-size: 11px;
-  float: none;
-  margin: 4px;
-  text-align: left;
-}
-
-.ranges ul {
-  list-style: none;
-  margin: 0 auto;
-  padding: 0;
-  width: 100%;
-}
-
-.ranges li {
-  font-size: 13px;
-  background-color: #f5f5f5;
-  border: 1px solid #f5f5f5;
-  -webkit-border-radius: 4px;
-          border-radius: 4px;
-  color: #08c;
-  padding: 3px 12px;
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-.ranges li:hover {
-  background-color: #08c;
-  border: 1px solid #08c;
-  color: #fff;
-}
-
-.ranges li.active {
-  background-color: #08c;
-  border: 1px solid #08c;
-  color: #fff;
-}
-
-/*  Larger Screen Styling */
-@media (min-width: 564px) {
-  .daterangepicker {
-    width: auto;
-  }
-  .daterangepicker .ranges ul {
-    width: 160px;
-  }
-  .daterangepicker.single .ranges ul {
-    width: 100%;
-  }
-  .daterangepicker.single .calendar.left {
-    clear: none;
-  }
-  .daterangepicker.single.ltr .ranges, .daterangepicker.single.ltr .calendar {
-    float: left;
-  }
-  .daterangepicker.single.rtl .ranges, .daterangepicker.single.rtl .calendar {
-    float: right;
-  }
-  .daterangepicker.ltr {
-    direction: ltr;
-    text-align: left;
-  }
-  .daterangepicker.ltr .calendar.left {
-    clear: left;
-    margin-right: 0;
-  }
-  .daterangepicker.ltr .calendar.left .calendar-table {
-    border-right: none;
-    -webkit-border-top-right-radius: 0;
-            border-top-right-radius: 0;
-    -webkit-border-bottom-right-radius: 0;
-            border-bottom-right-radius: 0;
-  }
-  .daterangepicker.ltr .calendar.right {
-    margin-left: 0;
-  }
-  .daterangepicker.ltr .calendar.right .calendar-table {
-    border-left: none;
-    -webkit-border-top-left-radius: 0;
-            border-top-left-radius: 0;
-    -webkit-border-bottom-left-radius: 0;
-            border-bottom-left-radius: 0;
-  }
-  .daterangepicker.ltr .left .daterangepicker_input {
-    padding-right: 12px;
-  }
-  .daterangepicker.ltr .calendar.left .calendar-table {
-    padding-right: 12px;
-  }
-  .daterangepicker.ltr .ranges, .daterangepicker.ltr .calendar {
-    float: left;
-  }
-  .daterangepicker.rtl {
-    direction: rtl;
-    text-align: right;
-  }
-  .daterangepicker.rtl .calendar.left {
-    clear: right;
-    margin-left: 0;
-  }
-  .daterangepicker.rtl .calendar.left .calendar-table {
-    border-left: none;
-    -webkit-border-top-left-radius: 0;
-            border-top-left-radius: 0;
-    -webkit-border-bottom-left-radius: 0;
-            border-bottom-left-radius: 0;
-  }
-  .daterangepicker.rtl .calendar.right {
-    margin-right: 0;
-  }
-  .daterangepicker.rtl .calendar.right .calendar-table {
-    border-right: none;
-    -webkit-border-top-right-radius: 0;
-            border-top-right-radius: 0;
-    -webkit-border-bottom-right-radius: 0;
-            border-bottom-right-radius: 0;
-  }
-  .daterangepicker.rtl .left .daterangepicker_input {
-    padding-left: 12px;
-  }
-  .daterangepicker.rtl .calendar.left .calendar-table {
-    padding-left: 12px;
-  }
-  .daterangepicker.rtl .ranges, .daterangepicker.rtl .calendar {
-    text-align: right;
-    float: right;
-  }
-}
-
-@media (min-width: 730px) {
-  .daterangepicker .ranges {
-    width: auto;
-  }
-  .daterangepicker.ltr .ranges {
-    float: left;
-  }
-  .daterangepicker.rtl .ranges {
-    float: right;
-  }
-  .daterangepicker .calendar.left {
-    clear: none !important;
-  }
-}
-
 /*!
 Animate.css - http://daneden.me/animate
 Licensed under the MIT license
@@ -13554,340 +13156,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .text-core .text-wrap .text-dropdown .text-list .text-suggestion.text-selected {
   color: #fff;
   background: #6d84b4;
-}
-
-/* Ion.RangeSlider
-// css version 2.0.3
-// © 2013-2014 Denis Ineshin | IonDen.com
-// ===================================================================================================================*/
-/* =====================================================================================================================
-// RangeSlider */
-.irs {
-  position: relative;
-  display: block;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.irs-line {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  outline: none !important;
-}
-
-.irs-line-left, .irs-line-mid, .irs-line-right {
-  position: absolute;
-  display: block;
-  top: 0;
-}
-
-.irs-line-left {
-  left: 0;
-  width: 11%;
-}
-
-.irs-line-mid {
-  left: 9%;
-  width: 82%;
-}
-
-.irs-line-right {
-  right: 0;
-  width: 11%;
-}
-
-.irs-bar {
-  position: absolute;
-  display: block;
-  left: 0;
-  width: 0;
-}
-
-.irs-bar-edge {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-}
-
-.irs-shadow {
-  position: absolute;
-  display: none;
-  left: 0;
-  width: 0;
-}
-
-.irs-slider {
-  position: absolute;
-  display: block;
-  cursor: default;
-  z-index: 1;
-}
-
-.irs-slider.type_last {
-  z-index: 2;
-}
-
-.irs-min {
-  position: absolute;
-  display: block;
-  left: 0;
-  cursor: default;
-}
-
-.irs-max {
-  position: absolute;
-  display: block;
-  right: 0;
-  cursor: default;
-}
-
-.irs-from, .irs-to, .irs-single {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  cursor: default;
-  white-space: nowrap;
-}
-
-.irs-grid {
-  position: absolute;
-  display: none;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 20px;
-}
-
-.irs-with-grid .irs-grid {
-  display: block;
-}
-
-.irs-grid-pol {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1px;
-  height: 8px;
-  background: #000;
-}
-
-.irs-grid-pol.small {
-  height: 4px;
-}
-
-.irs-grid-text {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  white-space: nowrap;
-  text-align: center;
-  font-size: 9px;
-  line-height: 9px;
-  padding: 0 3px;
-  color: #000;
-}
-
-.irs-disable-mask {
-  position: absolute;
-  display: block;
-  top: 0;
-  left: -1%;
-  width: 102%;
-  height: 100%;
-  cursor: default;
-  background: transparent;
-  z-index: 2;
-}
-
-.lt-ie9 .irs-disable-mask {
-  background: #000;
-  filter: alpha(opacity=0);
-  cursor: not-allowed;
-}
-
-.irs-disabled {
-  opacity: 0.4;
-}
-
-.irs-hidden-input {
-  position: absolute !important;
-  display: block !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 0 !important;
-  height: 0 !important;
-  font-size: 0 !important;
-  line-height: 0 !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  overflow: hidden;
-  outline: none !important;
-  z-index: -9999 !important;
-  background: none !important;
-  border-style: solid !important;
-  border-color: transparent !important;
-}
-
-/* Ion.RangeSlider, Simple Skin
-// css version 2.0.3
-// © Denis Ineshin, 2014    https://github.com/IonDen
-// © guybowden, 2014        https://github.com/guybowden
-// ===================================================================================================================*/
-/* =====================================================================================================================
-// Skin details */
-.irs {
-  height: 55px;
-}
-
-.irs-with-grid {
-  height: 75px;
-}
-
-.irs-line {
-  height: 10px;
-  top: 33px;
-  background: #EEE;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(-50%, #DDD), color-stop(150%, #FFF));
-  background: -webkit-linear-gradient(top, #DDD -50%, #FFF 150%);
-  background: linear-gradient(to bottom, #DDD -50%, #FFF 150%);
-  /* W3C */
-  border: 1px solid #CCC;
-  -webkit-border-radius: 16px;
-          border-radius: 16px;
-  -moz-border-radius: 16px;
-}
-
-.irs-line-left {
-  height: 8px;
-}
-
-.irs-line-mid {
-  height: 8px;
-}
-
-.irs-line-right {
-  height: 8px;
-}
-
-.irs-bar {
-  height: 10px;
-  top: 33px;
-  border-top: 1px solid #428bca;
-  border-bottom: 1px solid #428bca;
-  background: #428bca;
-  background: -webkit-gradient(linear, left bottom, left top, from(#428bca), to(#7fc3e8));
-  background: -webkit-linear-gradient(bottom, #428bca 0%, #7fc3e8 100%);
-  background: linear-gradient(to top, #428bca 0%, #7fc3e8 100%);
-  /* W3C */
-}
-
-.irs-bar-edge {
-  height: 10px;
-  top: 33px;
-  width: 14px;
-  border: 1px solid #428bca;
-  border-right: 0;
-  background: #428bca;
-  background: -webkit-gradient(linear, left bottom, left top, from(#428bca), to(#7fc3e8));
-  background: -webkit-linear-gradient(bottom, #428bca 0%, #7fc3e8 100%);
-  background: linear-gradient(to top, #428bca 0%, #7fc3e8 100%);
-  /* W3C */
-  -webkit-border-radius: 16px 0 0 16px;
-          border-radius: 16px 0 0 16px;
-  -moz-border-radius: 16px 0 0 16px;
-}
-
-.irs-shadow {
-  height: 2px;
-  top: 38px;
-  background: #000;
-  opacity: 0.3;
-  -webkit-border-radius: 5px;
-          border-radius: 5px;
-  -moz-border-radius: 5px;
-}
-
-.lt-ie9 .irs-shadow {
-  filter: alpha(opacity=30);
-}
-
-.irs-slider {
-  top: 25px;
-  width: 27px;
-  height: 27px;
-  border: 1px solid #AAA;
-  background: #DDD;
-  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(20%, gainsboro), to(white));
-  background: -webkit-linear-gradient(top, white 0%, gainsboro 20%, white 100%);
-  background: linear-gradient(to bottom, white 0%, gainsboro 20%, white 100%);
-  /* W3C */
-  -webkit-border-radius: 27px;
-          border-radius: 27px;
-  -moz-border-radius: 27px;
-  -webkit-box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-          box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-  cursor: pointer;
-}
-
-.irs-slider.state_hover, .irs-slider:hover {
-  background: #FFF;
-}
-
-.irs-min, .irs-max {
-  color: #333;
-  font-size: 12px;
-  line-height: 1.333;
-  text-shadow: none;
-  top: 0;
-  padding: 1px 5px;
-  background: rgba(0, 0, 0, 0.1);
-  -webkit-border-radius: 3px;
-          border-radius: 3px;
-  -moz-border-radius: 3px;
-}
-
-.lt-ie9 .irs-min, .lt-ie9 .irs-max {
-  background: #ccc;
-}
-
-.irs-from, .irs-to, .irs-single {
-  color: #fff;
-  font-size: 14px;
-  line-height: 1.333;
-  text-shadow: none;
-  padding: 1px 5px;
-  background: #428bca;
-  -webkit-border-radius: 3px;
-          border-radius: 3px;
-  -moz-border-radius: 3px;
-}
-
-.lt-ie9 .irs-from, .lt-ie9 .irs-to, .lt-ie9 .irs-single {
-  background: #999;
-}
-
-.irs-grid {
-  height: 27px;
-}
-
-.irs-grid-pol {
-  opacity: 0.5;
-  background: #428bca;
-}
-
-.irs-grid-pol.small {
-  background: #999;
-}
-
-.irs-grid-text {
-  bottom: 5px;
-  color: #99a4ac;
 }
 
 /*# sourceMappingURL=../css/libs.css.map */
