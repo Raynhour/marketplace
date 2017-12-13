@@ -168,7 +168,7 @@
     padding-bottom: 45px;
     &__link {
         display: block;
-        background-position: center center;
+        background-position: top center;
         background-size: cover;
         min-height: 275px;
         &_big {
@@ -185,6 +185,9 @@
         font-weight:900;
         &_light {
             color:$white-color;
+        }
+        &_dark {
+            color: #48525e;
         }
     }
 }
@@ -268,7 +271,7 @@
     &__link {
         color: #c9cfdd;
         padding: 20px 46px;  
-        font-weight: 900;
+        font-weight: 700;
         display: block;
         text-transform: uppercase;
         filter: grayscale(1);
@@ -341,7 +344,8 @@
 // =============================== S3 products ===========================
 
 .s3 {
-    padding: 30px 0;
+    padding-bottom:30px;
+    background-color:#eff3f8;
     .container-fluid {
         max-width: 1490px;
     }

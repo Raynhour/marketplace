@@ -20,7 +20,17 @@ $('document').ready(function(){
         autoplay: true,
         autoplayHoverPause: true,
         nav: false,
-        dots: true
+        dots: true,
+        responsiveClass:true,
+        responsive:{
+            0:{
+                items:1,
+            },
+            768:{
+                items:3,
+            }
+        }
+        
     });
 
     var galeries = $("div[id^='gallery']");
